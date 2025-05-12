@@ -1,7 +1,7 @@
 
 
 import './App.css'
-import Hd from './layout/Hd'
+import Hd from './layout/Hd.tsx'
 
 function App() {
 

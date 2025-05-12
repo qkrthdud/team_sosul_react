@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-function Hd() {
+const Hd: React.FC=()=> {
     return (
         <header id="hd" className="  fixed top-0 left-0 right-0 w-full z-50  bg-sub_apricot ">
         <div className="max-w-container_full flex justify-between items-center ej_innertop">
