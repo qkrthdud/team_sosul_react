@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../scss/quickicon.hyuna.scss';
 
-const Quickicon = () => {
+const Quickicon:React.FC = () => {
     return (
         <ul className="h_main_quickmenu">
     <li>

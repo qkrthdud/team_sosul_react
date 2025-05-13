@@ -1,8 +1,8 @@
 
 
 import './App.css'
-import Hd from './layout/Hd';
-import Quickicon from './components/Quickicon';
+import Hd from './layout/Hd.tsx';
+import Quickicon from './components/Quickicon.tsx';
 
 function App() {
 
