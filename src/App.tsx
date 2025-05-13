@@ -1,7 +1,8 @@
 
 
 import './App.css'
-import Hd from './layout/Hd'
+import Hd from './layout/Hd';
+import Quickicon from './components/Quickicon';
 
 function App() {
 
@@ -17,7 +18,9 @@ function App() {
   return (
    <div className='font-suit'>
     <Hd ></Hd>
-
+    <main>
+      <Quickicon></Quickicon>
+    </main>
     </div>
   )
 }
