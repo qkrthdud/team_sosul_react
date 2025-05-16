@@ -1,0 +1,741 @@
+@charset "UTF-8";
+.main_con .container {
+  padding: 0 6rem;
+}
+@media (max-width: 991px) {
+  .main_con .container {
+    padding: 0;
+  }
+}
+.main_con .tit {
+  text-align: center;
+  position: relative;
+}
+.main_con .tit .point_txt {
+  padding-bottom: 0.625rem;
+}
+@media (max-width: 991px) {
+  .main_con .tit .point_txt {
+    text-align: left;
+  }
+}
+@media (max-width: 991px) {
+  .main_con .tit .main_tit {
+    text-align: left;
+  }
+}
+.main_con .tit .all-btn {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  padding: 5px 25px;
+  background: none;
+  border-radius: 50px;
+}
+@media (max-width: 991px) {
+  .main_con .tit .all-btn {
+    display: none;
+  }
+}
+.main_con .mo-all-btn {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  background: none;
+  border-radius: 50px;
+}
+.main_con .con_txt {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  gap: 5px;
+}
+.main_con .con_txt .price {
+  font-weight: 700;
+  padding-bottom: 5px;
+}
+@media (max-width: 480px) {
+  .main_con .con_txt .price {
+    font-size: 16px;
+  }
+}
+.main_con .con_txt .percent {
+  margin-right: 5px;
+}
+.main_con .con_txt .won {
+  text-decoration: line-through;
+}
+.main_con .con_img {
+  width: 100%;
+  height: 100%;
+}
+.main_con .check_btn {
+  display: none;
+}
+
+.main_con_four .percent {
+  color: #6c7734;
+}
+.main_con_four .all-btn, .main_con_four .mo-all-btn {
+  border: 1px solid #ddd;
+}
+.main_con_four .all-btn:hover, .main_con_four .mo-all-btn:hover {
+  background: #3f422f;
+  border: 1px solid;
+  color: #fff;
+}
+@media (max-width: 991px) {
+  .main_con_four .nowSwiper {
+    margin: 0 -10px;
+  }
+}
+@media (max-width: 480px) {
+  .main_con_four .nowSwiper {
+    margin: 0 -5px;
+  }
+}
+.main_con_four .swiper-slide {
+  max-width: 294px;
+  margin-right: 20px;
+}
+@media (max-width: 991px) {
+  .main_con_four .swiper-slide {
+    max-width: none;
+    margin-right: 0;
+    padding: 0 10px 40px;
+  }
+}
+@media (max-width: 480px) {
+  .main_con_four .swiper-slide {
+    max-width: none;
+    margin-right: 0;
+    padding: 0 5px 40px;
+  }
+}
+.main_con_four .same-pagination {
+  position: relative;
+  bottom: 0;
+  height: 30px;
+  display: flex;
+}
+.main_con_four .same-pagination .swiper-pagination-bullet {
+  width: 100%;
+  border-radius: 0;
+  margin: 0;
+  height: 5px;
+  background: #aaa;
+}
+.main_con_four .same-pagination .swiper-pagination-bullet-active {
+  background: #6c7734;
+}
+.main_con_four .same-button-next,
+.main_con_four .same-button-prev {
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 0.625rem;
+  position: absolute;
+  top: 50%;
+}
+@media (max-width: 991px) {
+  .main_con_four .same-button-next,
+  .main_con_four .same-button-prev {
+    display: none;
+  }
+}
+.main_con_four .same-button-next {
+  background: url("https://item-team-sosul.vercel.app/img/icon/arrow_right.svg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  right: 0;
+}
+.main_con_four .same-button-prev {
+  background: url("https://item-team-sosul.vercel.app/img/icon/arrow_left.svg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-right: -0.313rem;
+  left: 0;
+}
+.main_con_four .same-button-next::after,
+.main_con_four .same-button-prev::after {
+  display: none;
+}
+.main_con_four .con_img_box {
+  max-height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+@media (max-width: 991px) {
+  .main_con_four .con_img_box {
+    max-height: 300px;
+  }
+}
+.main_con_four .con_tabBox {
+  display: none;
+}
+.main_con_four .con_tabBox:first-of-type {
+  display: block;
+}
+
+.main_con_three {
+  background: #faf6f3;
+}
+.main_con_three .all-btn, .main_con_three .mo-all-btn {
+  border: 1px solid #c3b8ab;
+  color: #9c8972;
+}
+.main_con_three .all-btn:hover, .main_con_three .mo-all-btn:hover {
+  background: #b6996f;
+  border: 1px solid;
+  color: #fff;
+}
+.main_con_three .swiper-slide {
+  max-width: 403px;
+  margin-right: 20px;
+}
+.main_con_three .swiper-slide:last-child {
+  margin-right: 0;
+}
+.main_con_three .mobile .swiper-container {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.main_con_three .mobile .swiper-slide {
+  max-width: none;
+}
+.main_con_three .mobile .con_img_box img {
+  border-radius: 10px;
+}
+.main_con_three .mobile .won, .main_con_three .mobile .percent, .main_con_three .mobile .review {
+  display: none;
+}
+.main_con_three .mobile .basic_txt {
+  line-height: 1.5;
+}
+.main_con_three .mobile #swiper1 {
+  margin-bottom: 10px;
+}
+.main_con_three .mobile #swiper1 .swiper-slide {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.main_con_three .mobile #swiper1 .swiper-slide .con_txt {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  padding: 25px 20px;
+  color: #fff;
+}
+.main_con_three .mobile #swiper1 .swiper-slide .con_img_box {
+  height: 100%;
+}
+.main_con_three .mobile #swiper1 .swiper-slide::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.main_con_three .mobile #swiper1 .swiper-slide .location {
+  font-size: 16px;
+  color: #fff;
+}
+.main_con_three .mobile #swiper1 .swiper-slide .won2, .main_con_three .mobile #swiper1 .swiper-slide .camping {
+  color: #fff;
+  font-size: 20px;
+}
+.main_con_three .mobile #swiper2 .swiper-slide {
+  margin: 0;
+  padding: 0px 0 10px;
+  border-bottom: 1px solid #E7DDD0;
+}
+.main_con_three .mobile #swiper2 .con_box {
+  display: flex;
+  align-items: center;
+}
+.main_con_three .mobile #swiper2 .con_img_box {
+  width: 39%;
+  height: 100%;
+  margin-right: 10px;
+}
+.main_con_three .mobile #swiper2 .con_txt {
+  width: 59%;
+  padding: 0;
+}
+.main_con_three .mobile #swiper2 .won2 {
+  font-size: 16px;
+}
+.main_con_three .con_img_box {
+  height: 260px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.main_con_three .here-button-next,
+.main_con_three .here-button-prev {
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 0.625rem;
+  position: absolute;
+  top: 50%;
+}
+@media (max-width: 991px) {
+  .main_con_three .here-button-next,
+  .main_con_three .here-button-prev {
+    display: none;
+  }
+}
+.main_con_three .here-button-next {
+  background: url("https://item-team-sosul.vercel.app/img/icon/arrow_right.svg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  right: 0;
+}
+.main_con_three .here-button-prev {
+  background: url("https://item-team-sosul.vercel.app/img/icon/arrow_left.svg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-right: -0.313rem;
+  left: 0;
+}
+.main_con_three .here-button-next::after,
+.main_con_three .here-button-prev::after {
+  display: none;
+}
+
+.mobile_bottom {
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 10;
+  border-top: 1px solid #ddd;
+}
+.mobile_bottom a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  flex-direction: column;
+  width: 20%;
+  color: #aaa;
+}
+.mobile_bottom a:hover {
+  color: #3f422f;
+}
+.mobile_bottom a:hover svg line, .mobile_bottom a:hover svg path {
+  stroke: #3f422f;
+}
+
+.Login {
+  display: flex;
+  justify-content: center;
+  color: black;
+  padding: inherit;
+  margin-bottom: 50px;
+  font-weight: 800;
+}
+
+.login {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10%;
+  /* Hide default checkbox */
+  /* Create custom checkbox */
+  /* Custom checkbox appearance */
+  /* Change color when checked */
+}
+.login p {
+  font-weight: 700;
+}
+.login .sub0 {
+  display: flex;
+  justify-content: space-between;
+  margin-right: -58%;
+}
+.login .sub2 {
+  text-decoration: underline;
+}
+.login .input-group {
+  text-align: center;
+  color: #777777;
+}
+.login .input-group input {
+  width: 454px;
+  border-radius: 20px;
+  border: none;
+  background-color: #dddddd;
+  color: #777;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.login button.login-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  background-color: #dddddd;
+  color: #777777;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.login button.login-btn:hover {
+  background-color: #D68B30;
+  color: #ffffff;
+}
+.login input[type=checkbox].custom-checkbox {
+  display: none;
+}
+.login input[type=checkbox].custom-checkbox + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 20px;
+}
+.login input[type=checkbox].custom-checkbox + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+.login input[type=checkbox].custom-checkbox:checked + label::before {
+  background-color: #D68B30; /* Change the background color */
+  border-color: #D68B30; /* Change the border color */
+}
+
+.JOIN {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+.JOIN .JOIN-title {
+  color: black;
+  margin-top: 5%;
+  text-align: center;
+  padding: inherit;
+  font-weight: 800;
+}
+.JOIN p {
+  text-align: center;
+  color: #777777;
+  margin-bottom: 20px;
+}
+
+.Join {
+  background: #fff;
+  padding: 30px;
+  width: 454px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.Join input, .Join select, .Join button, .Join label {
+  width: 100%;
+  text-align: left;
+}
+.Join form {
+  display: flex;
+  flex-direction: column;
+  width: 454px;
+  align-items: center;
+  gap: 10px;
+}
+.Join label {
+  color: #777;
+  margin: 10px 0 5px;
+  display: block;
+}
+.Join label span {
+  color: red;
+}
+.Join input, .Join select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #777;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.Join .birth, .Join .phone {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+.Join .phone input {
+  width: 100%;
+}
+.Join .region, .Join .agreements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.Join .agreements .required {
+  color: red;
+}
+.Join .region, .Join .agreements {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.Join input[type=checkbox] {
+  display: none;
+}
+.Join input[type=checkbox] + label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  color: #777777;
+}
+.Join input[type=checkbox] + label::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border: 1px solid #777;
+  border-radius: 5px;
+  display: inline-block;
+  transition: 0.3s;
+}
+.Join input[type=checkbox]:checked + label::before {
+  background: #D68B30;
+  border-color: #D68B30;
+  text-align: center;
+  line-height: 18px;
+}
+.Join .region {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 기본적으로 5개씩 한 줄 */
+  gap: 10px; /* 체크박스 간 간격 */
+  margin: 0 auto; /* 중앙 정렬 */
+}
+.Join .region label:nth-last-child(-n+2) {
+  grid-column: span 2; /* 마지막 줄에 2개만 정렬 */
+}
+.Join .gender-radio {
+  display: none;
+}
+.Join .gender-label {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #777777;
+  background: #fff;
+  color: #777;
+  cursor: pointer;
+  border-radius: 20px;
+  text-align: center;
+  display: inline-block;
+  transition: background 0.3s, color 0.3s;
+}
+.Join .gender {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+.Join .gender-radio:checked + .gender-label {
+  background: #D68B30;
+  color: white;
+  border: none;
+}
+.Join .join-btn {
+  width: 150px;
+  margin-top: 40px;
+  margin-bottom: 50%;
+  padding: 5px 0;
+  color: #777777;
+  background: transparent;
+  border: 1px solid #777777;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+.Join .join-btn:hover, .Join .join-btn:active {
+  background: #D68B30;
+  border-color: #D68B30;
+  color: white;
+}
+
+.pay hr {
+  border: none;
+  height: 1px;
+  background-color: #777;
+}
+.pay h2 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-weight: 700;
+}
+.pay .section-title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-weight: 800;
+}
+.pay label {
+  width: 130px;
+  color: black;
+}
+.pay .form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.pay .form-group input[type=text],
+.pay .form-group input[type=tel] {
+  width: 200px;
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #777;
+}
+.pay .phone-input {
+  display: flex;
+  gap: 10px;
+}
+.pay .btn {
+  background-color: #332E2A;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  white-space: nowrap;
+  height: 40px;
+  width: 138px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+.pay .btn:hover {
+  background-color: #292623;
+  color: white;
+}
+.pay input::-moz-placeholder {
+  color: #777; /* 입력 필드의 placeholder 색상 */
+}
+.pay input::placeholder {
+  color: #777; /* 입력 필드의 placeholder 색상 */
+}
+.pay .radio-group {
+  display: flex;
+  flex-direction: row; /* 가로 정렬 */
+  gap: 5px; /* 간격 조절 */
+}
+.pay .radio-group label {
+  align-items: center;
+  margin-right: -20%;
+}
+.pay .custom-radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #777;
+}
+.pay .custom-radio input {
+  display: none;
+}
+.pay .radio-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background: transparent;
+  border: 1px solid #777777;
+  transition: background-color 0.3s ease;
+}
+.pay .custom-radio input:checked + .radio-btn {
+  background-color: #D68B30;
+  border: none;
+}
+
+.payment-container {
+  width: 951px;
+}
+.payment-container h2 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-weight: 800;
+}
+.payment-container .hidden-radio {
+  display: none;
+}
+.payment-container .payment-button {
+  width: 220px;
+  border: 1px solid #777777;
+  background: transparent;
+  padding: 10px 0px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.3s;
+  display: inline-block;
+  text-align: center;
+}
+.payment-container .hidden-radio:checked + .payment-button {
+  background-color: #D68B30;
+  color: white;
+  border: 1px solid #D68B30;
+}
+.payment-container .checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  margin-left: 5px;
+}
+.payment-container .custom-checkbox {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid #777777;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 18px;
+  height: 18px;
+}
+.payment-container .custom-checkbox:checked {
+  background-color: #D68B30;
+  border: none;
+}
+.payment-container .checkbox-label {
+  cursor: pointer;
+  transition: 0.3s;
+}

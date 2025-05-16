@@ -1,8 +1,11 @@
-
+import { Routes, Route } from 'react-router-dom'
 
 import './App.css'
-import Hd from './layout/Hd.tsx';
-import Quickicon from './components/Quickicon.tsx';
+
+import Layout from './layout/Layout.tsx';
+import Indexroute from './route/Indexroute.tsx';
+
+
 
 function App() {
 
@@ -16,12 +19,13 @@ function App() {
 
 
   return (
-   <div className='font-suit'>
-    <Hd ></Hd>
-    <main>
-      <Quickicon></Quickicon>
-    </main>
-    </div>
+   <Layout className='font-suit'> 
+    <Routes>
+        <Route path="/" element={<Indexroute></Indexroute>}>
+        </Route>
+    </Routes>  
+    
+    </Layout>
   )
 }
 

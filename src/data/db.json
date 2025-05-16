@@ -1,0 +1,60 @@
+{
+   "main_con_four" : [
+        {
+          "id": 1,
+          "image": "//item-team-sosul.vercel.app/img/image/image1.jpg",
+          "location": "지역",
+          "name": "캠핑장 이름",
+          "originalPrice": 80000,
+          "discountRate": 20,
+          "discountedPrice": 64000,
+          "rating": 4.8,
+          "reviewCount": 124
+        },
+        {
+          "id": 2,
+          "image": "//item-team-sosul.vercel.app/img/image/image2.jpg",
+          "location": "지역",
+          "name": "캠핑장 이름",
+          "originalPrice": 80000,
+          "discountRate": 20,
+          "discountedPrice": 64000,
+          "rating": 4.8,
+          "reviewCount": 124
+        },
+        {
+          "id": 3,
+          "image": "//item-team-sosul.vercel.app/img/image/image3.jpg",
+          "location": "지역",
+          "name": "캠핑장 이름",
+          "originalPrice": 80000,
+          "discountRate": 20,
+          "discountedPrice": 64000,
+          "rating": 4.8,
+          "reviewCount": 124
+        },
+        {
+          "id": 4,
+          "image": "//item-team-sosul.vercel.app/img/image/image4.jpg",
+          "location": "지역",
+          "name": "캠핑장 이름",
+          "originalPrice": 80000,
+          "discountRate": 20,
+          "discountedPrice": 64000,
+          "rating": 4.8,
+          "reviewCount": 124
+        },
+        {
+          "id": 5,
+          "image": "//item-team-sosul.vercel.app/img/image/image5.jpg",
+          "location": "지역",
+          "name": "캠핑장 이름",
+          "originalPrice": 80000,
+          "discountRate": 20,
+          "discountedPrice": 64000,
+          "rating": 4.8,
+          "reviewCount": 124
+        }
+      ]
+      
+}
