@@ -1,7 +1,15 @@
 import fourswiper from "../data/db.json";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import { useRef } from "react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 function SwiperThumb() {
   const { main_con_four } = fourswiper;
+  const prevRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
     <div className="main_con main_con_four gray5_bg p100">
@@ -17,10 +25,43 @@ function SwiperThumb() {
 
         <div className="slider">
           <div className="inner">
-            <ul className="swiper-wrapper slide_list">
+            <Swiper
+              modules={[Navigation, Pagination]}
+              spaceBetween={30}
+              slidesPerView={4}
+              onBeforeInit={(swiper) => {
+                // 수동으로 navigation 엘리먼트 설정
+                if (
+                  typeof swiper.params.navigation !== 'boolean' &&
+                  swiper.params.navigation
+                ) {
+                  swiper.params.navigation.prevEl = prevRef.current;
+                  swiper.params.navigation.nextEl = nextRef.current;
+                }
+              }}
+              navigation={{
+                prevEl: prevRef.current,
+                nextEl: nextRef.current,
+              }}
+              pagination={{
+                el: ".same-pagination",
+                clickable: true,
+              }}
+              breakpoints={{
+                768: {
+                  slidesPerView: 2,
+                },
+                1024: {
+                  slidesPerView: 3,
+                },
+                1440: {
+                  slidesPerView: 4,
+                },
+              }}
+            >
               {Array.isArray(main_con_four) &&
                 main_con_four.map((v, i) => (
-                  <li className="swiper-slide" key={v.id || i}>
+                  <SwiperSlide key={v.id || i}>
                     <div className="con_box">
                       <div className="con_img_box">
                         <img
@@ -60,18 +101,32 @@ function SwiperThumb() {
                         </button>
                       </div>
                     </div>
-                  </li>
+                  </SwiperSlide>
                 ))}
-            </ul>
+            </Swiper>
           </div>
+
+          {/* 페이지네이션 */}
           <div className="mobile">
             <div className="swiper-pagination same-pagination"></div>
           </div>
-          <span className="btn btn_prev same-button-prev"></span>
-          <span className="btn btn_next same-button-next"></span>
+
+          {/* 내 커스텀 버튼 */}
+          <button
+            ref={prevRef}
+            className="btn btn_prev same-button-prev"
+            aria-label="Previous Slide"
+          ></button>
+          <button
+            ref={nextRef}
+            className="btn btn_next same-button-next"
+            aria-label="Next Slide"
+          ></button>
         </div>
 
-        <button className="mo-all-btn point_txt gray3 d-lg-none">전체보기</button>
+        <button className="mo-all-btn point_txt gray3 d-lg-none">
+          전체보기
+        </button>
       </div>
     </div>
   );
