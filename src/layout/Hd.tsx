@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const Hd: React.FC=()=> {
     return (
         <header id="hd" className="  fixed top-0 left-0 right-0 w-full z-50  bg-sub_apricot ">
-        <div className="max-w-container_full flex justify-between items-center ej_innertop">
+        <div className="max-w container_full flex justify-between items-center ej_innertop">
             <h1 className="order-[1]"><Link to="/" className="main-logo"><img src="//item-team-sosul.vercel.app/img/logo/logo.svg" alt="" /></Link></h1>
 
             <button className="Category-btn lg:hidden color-white bg-color-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#categoryMenu" aria-controls="categoryMenu">
@@ -23,7 +23,7 @@ const Hd: React.FC=()=> {
 
             <ul className="util flex order-2  whitespace-nowrap items-center justify-end gap-lg-5 gap-2 font-point_txt organic w-0">
                 <li>
-                    <Link to="" className=" whitespace-nowrap">
+                    <Link to="" className=" whitespace-nowrap d-flex">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="//www.w3.org/2000/svg">
                             <path d="M16.9529 4.69562H4V16H16.9529V4.69562Z" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
                             <path d="M4 8.08698H16.9529" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -31,9 +31,9 @@ const Hd: React.FC=()=> {
                             <path d="M13.4199 3V5.82609" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
                             <path d="M13.2458 10.5493L10.3019 13.3754L8.47086 11.806" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
                         </svg>
-                    <span className="hidden lg:block">예약확인</span></Link></li>
+                    <span className="hidden lg:block mr-6">예약확인</span></Link></li>
                 <li>
-                       <Link to="/member/login.php">
+                       <Link to="/member/login.php" className=" whitespace-nowrap d-flex">
                         <svg xmlns="//www.w3.org/2000/svg" width="21" height="12" viewBox="0 0 21 12" fill="none">
                             <path d="M19.5 11V6" stroke="#3F422F" stroke-width="1.2" stroke-linejoin="round"></path>
                             <path d="M7.23251 10.9999H10.047L5.77351 1L1.5 10.9999H4.31452L5.77351 7.5861L7.23251 10.9999Z" stroke="#3F422F" stroke-width="1.2" stroke-linejoin="round"></path>

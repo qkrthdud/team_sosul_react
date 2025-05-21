@@ -15,10 +15,8 @@ function SwiperThumb() {
     <div className="main_con main_con_four gray5_bg p100">
       <div className="container">
         <div className="tit">
-          <div className="point_txt organic d-lg-none">NOW HERE</div>
           <div className="main_tit panBlack">
-            당신을 위한 추천
-            <br className="d-lg-none" /> 지금 여기
+            당신을 위한 추천 지금 여기
           </div>
           <button className="all-btn point_txt gray3">전체보기</button>
         </div>

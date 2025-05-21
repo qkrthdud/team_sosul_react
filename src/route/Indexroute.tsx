@@ -3,7 +3,6 @@ import Quickicon from '../components/Quickicon.tsx';
 import SwiperThumb from '../components/SwiperThumb.tsx';
 
 
-
 function Indexroute() {
 
 
