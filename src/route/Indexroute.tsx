@@ -5,7 +5,6 @@ import Banner from '../components/Banner.tsx';
 import Banner2 from '../components/Banner2.tsx';
 
 
-
 function Indexroute() {
 
 
