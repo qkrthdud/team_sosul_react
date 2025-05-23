@@ -5,6 +5,7 @@ import './App.css'
 import Layout from './layout/Layout.tsx';
 import Indexroute from './route/Indexroute.tsx';
 import Reservation from './pages/Reservation.tsx';
+import CampgroundForm from './route/CampgroundForm.tsx';
 
 
 
@@ -29,6 +30,8 @@ function App() {
         <Route path="/onlyhere" element={<Reservation></Reservation>}>
         </Route>
         <Route path="/promotion" element={<p style={{height:"100vh"}}>빨랑해</p>}>
+        </Route>
+        <Route path="/user/register" element={<CampgroundForm></CampgroundForm>}>
         </Route>
         <Route path="*" element={<p style={{height:"100vh"}}>주소 잘 못쳤지 </p>}>
         </Route>
