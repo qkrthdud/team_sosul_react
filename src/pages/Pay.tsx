@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Reservation: React.FC = () => {
+const Pay: React.FC = () => {
     return (
         <div>
+            <h1>View Page</h1>
         </div>
     );
 };
 
-export default Reservation;
+export default Pay;

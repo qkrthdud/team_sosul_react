@@ -15,7 +15,7 @@ const Hd: React.FC=()=> {
             </button> 
 
             <ul id="gnb" className="hidden lg:flex order-[0] gap-3 organic w-0"> 
-                <li><Link to="/reservation" className="color-white whitespace-nowrap">예약하기</Link></li>
+                <li><Link to="/list" className="color-white whitespace-nowrap">예약하기</Link></li>
                 <li><Link to="/onlyhere" className="color-white whitespace-nowrap">오직여기</Link></li>
                 <li><Link to="/promotion" className="color-white whitespace-nowrap">프로모션</Link></li>
                 <li><Link to="/brand" className="color-white whitespace-nowrap">브랜드</Link></li>

@@ -4,7 +4,16 @@ import './App.css'
 
 import Layout from './layout/Layout.tsx';
 import Indexroute from './route/Indexroute.tsx';
+
+import Brand from './pages/Brand.tsx';
+import Confirmation from './pages/Confirmation.tsx'
+import List from './pages/List.tsx';
+import Login from './pages/Login.tsx'
+import Only from './pages/Only.tsx';
+import Pay from './pages/Pay.tsx'
+import Promotion from './pages/Promotion.tsx'
 import Reservation from './pages/Reservation.tsx';
+import View from './pages/View.tsx';
 
 
 
@@ -24,12 +33,27 @@ function App() {
     <Routes>
         <Route path="/" element={<Indexroute></Indexroute>}>
         </Route>
+
+        <Route path="/list" element={<List></List>}>
+        </Route>
+        <Route path="/onlyhere" element={<Only></Only>}>
+        </Route>
+        <Route path="/promotion" element={<Promotion></Promotion>}>
+        </Route>
+        <Route path="/brand" element={<Brand></Brand>}>
+        </Route>
+
+        <Route path="/confirmation" element={<Confirmation></Confirmation>}>
+        </Route>
+        <Route path="/login" element={<Login></Login>}>
+        </Route>
+        <Route path="/pay" element={<Pay></Pay>}>
+        </Route>
         <Route path="/reservation" element={<Reservation></Reservation>}>
         </Route>
-        <Route path="/onlyhere" element={<Reservation></Reservation>}>
+        <Route path="/view" element={<View></View>}>
         </Route>
-        <Route path="/promotion" element={<p style={{height:"100vh"}}>빨랑해</p>}>
-        </Route>
+
         <Route path="*" element={<p style={{height:"100vh"}}>주소 잘 못쳤지 </p>}>
         </Route>
     </Routes>

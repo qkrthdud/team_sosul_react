@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Reservation: React.FC = () => {
+const Brand: React.FC = () => {
     return (
         <div>
         </div>
     );
 };
 
-export default Reservation;
+export default Brand;
