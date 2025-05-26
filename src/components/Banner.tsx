@@ -1,15 +1,29 @@
 import React from 'react';
 import '../scss/quickicon.hyuna.scss';
+interface DataObj {
+  sub: { text: string; color: string };
+  big: { text: string; color: string };
+  bg:string;
+  img: {
+    src: string;
+    alt: string;
+    des?: boolean;
+  };
+}
 
-const Banner: React.FC = () => {
+interface BannerProps {
+  dataobj: DataObj;
+}
+
+const Banner: React.FC<BannerProps> = ({ dataobj  }) => {
     const handleDownload = () => {
         alert('쿠폰이 다운로드되었습니다!');
       };
     return (
-        <div className="h_sosul_banner">
+        <div className={`h_sosul_banner ${dataobj.bg}`}>
       <div>
-        <p className="coupon_text_small">쿠폰받고 첫 예약 준비해요</p>
-        <p className="coupon_text_large">첫 예약 누구나 즉시할인!</p>
+        <p className={`coupon_text_small ${dataobj.sub.color}`}>{dataobj.sub.text}</p>
+        <p className={`coupon_text_large ${dataobj.big.color}`}>{dataobj.big.text}</p>
       </div>
       <div className="coupon_img_text">
         <a
@@ -18,9 +32,10 @@ const Banner: React.FC = () => {
           href="#none"
         >
           <img
-            src="//item-team-sosul.vercel.app/img/image/banner_coupon2.svg"
-            alt="첫예약할인쿠폰"
+            src={dataobj.img.src}
+            alt={dataobj.img.alt}
           />
+          { dataobj.img.des &&
           <div className="coupon_text_box">
             <span>첫예약할인쿠폰</span>
             <p className="coupon_text">
@@ -28,6 +43,7 @@ const Banner: React.FC = () => {
               <span className="coupon_text_end">쿠폰</span>
             </p>
           </div>
+           }
         </a>
       </div>
     </div>
