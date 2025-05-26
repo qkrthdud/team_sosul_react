@@ -20,7 +20,7 @@ const Banner: React.FC<BannerProps> = ({ dataobj  }) => {
         alert('쿠폰이 다운로드되었습니다!');
       };
     return (
-      <div className={`h_sosul_banner ${dataobj.bg} flex align-center justify-center gap-[52px] bg-sub_apricot w-100 py-[20px]`}>
+      <div className={`h_sosul_banner ${dataobj.bg} flex align-center justify-center gap-[52px] w-100 py-[20px]`}>
       <div>
         <p className={`coupon_text_small ${dataobj.sub.color}`}>{dataobj.sub.text}</p>
         <p className={`coupon_text_large ${dataobj.big.color}`}>{dataobj.big.text}</p>
