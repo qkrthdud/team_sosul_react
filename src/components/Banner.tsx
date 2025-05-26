@@ -6,7 +6,7 @@ const Banner: React.FC = () => {
         alert('쿠폰이 다운로드되었습니다!');
       };
     return (
-        <div className="h_sosul_banner">
+        <div className="h_sosul_banner flex align-center justify-center gap-[52px] bg-sub_apricot w-100 py-[20px]">
       <div>
         <p className="coupon_text_small">쿠폰받고 첫 예약 준비해요</p>
         <p className="coupon_text_large">첫 예약 누구나 즉시할인!</p>

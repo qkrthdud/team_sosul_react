@@ -24,17 +24,13 @@ $border-color: #DDD;
   align-items: flex-end;
 }
 
-#hd {
-
-  position: fixed;
-  left:0;
-  top:0; right:0;
+#hd { 
+ 
   z-index: 1000;
-  background-color: white;
-
+  
   
   .mo-search {
-    display: flex;
+
     height: 2.5rem;
     border-radius: 100px;
     padding: 5px 10px;
@@ -410,7 +406,7 @@ a.list-group-reserve {
 .video-bg {
   position: absolute;
   max-width: 112.375rem;
-  height: 100%;
+ 
   top: 0px;
   left: 0;
   right: 0;
@@ -551,19 +547,11 @@ h1 a img {
     height: 21.875rem; 
   }
   
-  .video-bg {
-    height: 21.875rem; 
-  }
+ 
   
-  .search-box, 
-  .search-container {
-      display: none;  /* 작은 화면에서 검색 UI 숨김 */
-  }
 
-@media (min-width: 991px) { /* lg 이상에서는 기본 검색 UI 보이도록 */
-  .mo-search {
-      display: none }
-  }
+
+
 }
 
 

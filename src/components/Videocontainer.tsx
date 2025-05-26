@@ -7,7 +7,7 @@ const Videocontainer = () => {
 
     return (
         <div className="video-container">
-            <div className="video-bg"> 
+            <div className="video-bg h-[21.875rem] lg:h-[100%]"> 
                 <video muted loop autoPlay playsInline>
                     <source src="//item-team-sosul.vercel.app/video/main_video.mp4" type="video/mp4" />
                    
