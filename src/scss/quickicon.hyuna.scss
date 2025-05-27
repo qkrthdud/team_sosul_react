@@ -1,14 +1,4 @@
-//사이드퀵메뉴
-.quick-menu {
-    transform: translateX(100%);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    &.show {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-//--사이드퀵메뉴
+
 
 
 //상단메인아이콘퀵메뉴

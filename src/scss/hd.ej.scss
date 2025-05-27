@@ -481,57 +481,6 @@ a.list-group-reserve {
 }
 
 
-.quick-menu {
-  position: fixed;
-  bottom: 2.5rem; // 40px
-  right: 3.125rem; // 50px
-  width: 4.375rem; // 70px
-  height: 17.5rem; // 280px
-  @extend .d-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 1000;
-}
-
-.quick-btn {
-  width: 4.375rem; // 70px
-  height: 4.375rem; // 70px
-  border: 0.0625rem solid $border-color; // 1px
-  flex-direction: column;
-  font-weight: 500;
-  text-align: center;
-  border-top: none;
-  justify-content: center;
-
-  &:first-child {
-    border-top: 0.0625rem solid $border-color; // 1px
-  }
-
-  svg {
-    width: 1.5rem; // 24px
-    height: 1.5rem; // 24px
-  }
-  
-  span {
-    display: block;
-  }
-}
-
-.btn-reserve {
-  border-radius: 10% 10% 0 0;
-  background-color: $bg-white;
-}
-
-.btn-chat,
-.btn-log {
-  background-color: $bg-white;
-}
-
-.btn-top {
-  border-radius: 0 0 10% 10%;
-}
-
 h1 a img {
   max-width: 7.5rem; // 120px
   height: auto;

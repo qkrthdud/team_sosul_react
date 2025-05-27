@@ -2,6 +2,7 @@ import Videocontainer from '../components/Videocontainer.tsx';
 import Quickicon from '../components/Quickicon.tsx';
 import SwiperThumb from '../components/SwiperThumb.tsx';
 import Banner from '../components/Banner.tsx';
+import Morebox from '../components/Morebox.tsx';
 
 
 
@@ -33,6 +34,40 @@ function Indexroute() {
                     des: false
                 }
                 }}></Banner>
+                <div className="more p100">
+                    <div className="container">
+                        <div className="point_txt organic block lg:hidden">SEARCH</div>
+                        <div className="main_tit">
+                        가고 싶은 캠핑장소를
+                        <br className="block lg:hidden" />
+                        찾아보세요!
+                        </div>
+
+                        <div className="more_area lg:flex">
+                            <Morebox dataobj={ {
+                                bigtit:"언제 떠날까요?",
+                                subtit:"캘린더로 일정 선택이 가능합니다.",
+                                bg:"bg-sub_ivory",
+                                br:"border-[#b6996f]",
+                                hv: {bg:"hover:bg-[#b6996f]", color:"hover:text-white"},
+                                a:{text:"날짜로 장소 찾기", link:"/search/day", color:"sub_apricot"},
+                                color:"text-[#b6996f]",
+                                img:{ src:"//item-team-sosul.vercel.app/img/image/when.jpg", alt:"캘린더"}
+                            }}></Morebox>
+                            <Morebox dataobj={ {
+                                bigtit:"어디로 떠날까요?",
+                                subtit:"지도로 장소를 찾으실 수 있습니다.",
+                                bg:"bg-gray_5",
+                                br:"border-gray_3",
+                                hv: {bg:"hover:bg-gray_3", color:"hover:text-white"},
+                                a:{text:"위치로 장소찾기", link:"/search/location", color:"gray_5"},
+                                color:"text-gray_3",
+                                img:{ src:"//item-team-sosul.vercel.app/img/image/where.jpg", alt:"지도"}
+                            }}></Morebox>
+
+                        </div>
+                    </div>
+                </div>
         </div>
     )
 }
