@@ -1,5 +1,5 @@
 import React from 'react';
-import '../scss/quickicon.hyuna.scss';
+import '../scss/Banner.hyuna.scss';
 interface DataObj {
   sub: { text: string; color: string };
   big: { text: string; color: string };

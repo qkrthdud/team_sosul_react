@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation"; // 이 CSS는 커스텀 버튼에도 영향을 줄 수 있으므로, 필요 없다면 제거 가능
 import "swiper/css/pagination";
 import '../scss/soyoung.scss';
+import Title from "./Title";
 
 // InstagramEmbed 컴포넌트 및 관련 타입 정의 (이전과 동일)
 declare global {
@@ -61,11 +62,12 @@ function SwiperThumbInstagram() {
   return (
     <div className="main_con main_con_four gray5_bg p100">
       <div className="container">
-        <div className="tit">
-          <div className="main_tit panBlack">
-            소슬의 캠핑 이야기
-          </div>
-        </div>
+          <Title dataobj={{
+            tit:"소슬의 캠핑 이야기",
+            btnshow: false,
+            txtalign : "center"
+          }}>
+          </Title>
 
         <div className="slider">
           <div className="inner h-[28rem] ">

@@ -32,7 +32,7 @@ const Quick:React.FC = () => {
     return (
         <div className="hidden lg:flex flex-col quick-menu text-point show fixed bottom-10 right-[3.125rem] z-50 text-[13px]">
       {/* 예약확인 버튼 */}
-        <button className="quick-btn btn-reserve organic flex flex-col items-center p-2 bg-white rounded shadow">
+        <button className="quick-btn btn-reserve organic flex flex-col items-center p-2 bg-white shadow">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M16.9529 4.69562H4V16H16.9529V4.69562Z" stroke="#3F422F" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M4 8.08698H16.9529" stroke="#3F422F" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -67,7 +67,7 @@ const Quick:React.FC = () => {
         </button>
 
         {/* TOP 버튼 */}
-        <button className="quick-btn btn-top organic bg-white text-white flex items-center p-2 rounded shadow bg-main hover:bg-main">
+        <button className="quick-btn btn-top organic text-white flex items-center p-2 shadow bg-main">
             <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
             <path d="M7 22L17.0186 12" stroke="#fff" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
             <path d="M17.0186 12L27.0001 22" stroke="#fff" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />

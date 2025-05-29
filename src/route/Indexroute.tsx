@@ -4,7 +4,7 @@ import SwiperThumb from '../components/SwiperThumb.tsx';
 import Banner from '../components/Banner.tsx';
 import Instagram from '../components/Instagram.tsx';
 import Morebox from '../components/Morebox.tsx';
-
+import Title from '../components/Title.tsx';
 
 
 
@@ -41,10 +41,14 @@ function Indexroute() {
                     <div className="container">
                         <div className="point_txt organic block lg:hidden">SEARCH</div>
                         <div className="main_tit">
-                        가고 싶은 캠핑장소를
-                        <br className="block lg:hidden" />
-                        찾아보세요!
+                        
                         </div>
+                        <Title dataobj={{
+                            tit:`가고 싶은 캠핑장소를  <br class='block lg:hidden' /> 찾아보세요!`,
+                            btnshow: false,
+                            txtalign : "center"
+                        }}>
+                        </Title>
 
                         <div className="more_area lg:flex">
                             <Morebox dataobj={ {

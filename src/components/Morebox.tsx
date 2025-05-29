@@ -12,11 +12,11 @@ interface DataObj {
     color:string;
     img:{ src:string, alt:string}
 }
-interface BannerProps {
+interface MoreboxProps {
     dataobj: DataObj;
   }
 
-const Morebox: React.FC<BannerProps> = ({ dataobj  }) => {
+const Morebox: React.FC<MoreboxProps> = ({ dataobj  }) => {
     return (
       
     

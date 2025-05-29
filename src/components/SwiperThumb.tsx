@@ -5,6 +5,7 @@ import { useRef } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Title from "./Title";
 
 function SwiperThumb() {
   const { main_con_four } = fourswiper;
@@ -14,12 +15,15 @@ function SwiperThumb() {
   return (
     <div className="main_con main_con_four gray5_bg p100">
       <div className="container">
-        <div className="tit">
-          <div className="main_tit panBlack">
-            당신을 위한 추천 지금 여기
-          </div>
-          <button className="all-btn point_txt gray3">전체보기</button>
-        </div>
+        
+          <Title dataobj={{
+            tit:"당신을 위한 추천 지금 여기",
+            btnshow: true,
+            txtalign : "center"
+          }}>
+          </Title>
+          
+        
 
         <div className="slider">
           <div className="inner">
@@ -122,9 +126,6 @@ function SwiperThumb() {
           ></button>
         </div>
 
-        <button className="mo-all-btn point_txt gray3 d-lg-none">
-          전체보기
-        </button>
       </div>
     </div>
   );

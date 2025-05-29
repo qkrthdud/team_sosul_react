@@ -96,7 +96,7 @@
   }
 }
 .main_con_four .swiper-slide {
-  max-width: 294px;
+  /* max-width: 294px; */
   margin-right: 20px;
 }
 @media (max-width: 991px) {
