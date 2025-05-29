@@ -60,7 +60,7 @@ function SwiperThumbInstagram() {
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <div className="main_con main_con_four gray5_bg p100">
+    <div className="main_con main_con_four p100">
       <div className="container">
           <Title dataobj={{
             tit:"소슬의 캠핑 이야기",
@@ -70,10 +70,9 @@ function SwiperThumbInstagram() {
           </Title>
 
         <div className="slider">
-          <div className="inner h-[28rem] ">
+          <div className="inner h-[29rem] ">
             <Swiper
               modules={[Navigation, Pagination]} // Navigation 모듈은 포함
-              slidesPerView={3}
               loop={true} 
               pagination={{
                 el: ".same-pagination",

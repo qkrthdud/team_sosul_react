@@ -7,6 +7,8 @@ import Morebox from '../components/Morebox.tsx';
 import Title from '../components/Title.tsx';
 
 
+import Magazin from '../components/Magazin.tsx';
+import Hotspot from '../components/Hotspot.tsx';
 
 function Indexroute() {
 
@@ -26,6 +28,8 @@ function Indexroute() {
                     des: true
                 }
                 }}></Banner>
+            <Hotspot></Hotspot>
+            <Magazin></Magazin>
             <Instagram></Instagram>
             <Banner dataobj={{
                 bg:"bg-gray_4",
