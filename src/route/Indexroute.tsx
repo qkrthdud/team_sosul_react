@@ -2,6 +2,7 @@ import Videocontainer from '../components/Videocontainer.tsx';
 import Quickicon from '../components/Quickicon.tsx';
 import SwiperThumb from '../components/SwiperThumb.tsx';
 import Banner from '../components/Banner.tsx';
+import Instagram from '../components/Instagram.tsx';
 
 
 
@@ -23,6 +24,7 @@ function Indexroute() {
                     des: true
                 }
                 }}></Banner>
+            <Instagram></Instagram>
             <Banner dataobj={{
                 bg:"bg-gray_4",
                 sub : {text : "당일 예약 가능한 스팟 보기",color:"text-main"},
