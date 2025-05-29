@@ -68,10 +68,9 @@ function SwiperThumbInstagram() {
         </div>
 
         <div className="slider">
-          <div className="inner h-[28rem] ">
+          <div className="inner h-[29rem] ">
             <Swiper
               modules={[Navigation, Pagination]} // Navigation 모듈은 포함
-              slidesPerView={3}
               loop={true} 
               pagination={{
                 el: ".same-pagination",

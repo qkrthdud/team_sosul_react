@@ -5,7 +5,7 @@ import Banner from '../components/Banner.tsx';
 import Instagram from '../components/Instagram.tsx';
 import Morebox from '../components/Morebox.tsx';
 import Magazin from '../components/Magazin.tsx';
-import Hotspot from '../components/hotspot.tsx';
+import Hotspot from '../components/Hotspot.tsx';
 
 function Indexroute() {
 
