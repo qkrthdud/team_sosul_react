@@ -1,8 +1,25 @@
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react';
 
 const Hd: React.FC=()=> {
+   
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 0) {
+                document.body.classList.add('down');
+            } else {
+                document.body.classList.remove('down');
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     return (
-        <header id="hd" className="  fixed top-0 left-0 right-0 w-full z-50  bg-sub_apricot ">
+        <header id="hd" className="  fixed top-0 left-0 right-0 w-full z-50  bg-sub_apricot bg-white ">
         <div className="max-w container_full flex justify-between items-center ej_innertop">
             <h1 className="order-[1]"><Link to="/" className="main-logo"><img src="//item-team-sosul.vercel.app/img/logo/logo.svg" alt="" /></Link></h1>
 
@@ -45,7 +62,7 @@ const Hd: React.FC=()=> {
                         </svg>
                         <span className="hidden lg:block">로그인</span>
                     </Link>
-                                </li>
+                </li>
             </ul>
         </div>
         <div className="search-box flex  jcc hidden lg:flex absolute">

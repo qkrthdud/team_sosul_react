@@ -24,17 +24,13 @@ $border-color: #DDD;
   align-items: flex-end;
 }
 
-#hd {
-
-  position: fixed;
-  left:0;
-  top:0; right:0;
+#hd { 
+ 
   z-index: 1000;
-  background-color: white;
-
+  
   
   .mo-search {
-    display: flex;
+
     height: 2.5rem;
     border-radius: 100px;
     padding: 5px 10px;
@@ -410,7 +406,7 @@ a.list-group-reserve {
 .video-bg {
   position: absolute;
   max-width: 112.375rem;
-  height: 100%;
+ 
   top: 0px;
   left: 0;
   right: 0;
@@ -485,57 +481,6 @@ a.list-group-reserve {
 }
 
 
-.quick-menu {
-  position: fixed;
-  bottom: 2.5rem; // 40px
-  right: 3.125rem; // 50px
-  width: 4.375rem; // 70px
-  height: 17.5rem; // 280px
-  @extend .d-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 1000;
-}
-
-.quick-btn {
-  width: 4.375rem; // 70px
-  height: 4.375rem; // 70px
-  border: 0.0625rem solid $border-color; // 1px
-  flex-direction: column;
-  font-weight: 500;
-  text-align: center;
-  border-top: none;
-  justify-content: center;
-
-  &:first-child {
-    border-top: 0.0625rem solid $border-color; // 1px
-  }
-
-  svg {
-    width: 1.5rem; // 24px
-    height: 1.5rem; // 24px
-  }
-  
-  span {
-    display: block;
-  }
-}
-
-.btn-reserve {
-  border-radius: 10% 10% 0 0;
-  background-color: $bg-white;
-}
-
-.btn-chat,
-.btn-log {
-  background-color: $bg-white;
-}
-
-.btn-top {
-  border-radius: 0 0 10% 10%;
-}
-
 h1 a img {
   max-width: 7.5rem; // 120px
   height: auto;
@@ -551,19 +496,11 @@ h1 a img {
     height: 21.875rem; 
   }
   
-  .video-bg {
-    height: 21.875rem; 
-  }
+ 
   
-  .search-box, 
-  .search-container {
-      display: none;  /* 작은 화면에서 검색 UI 숨김 */
-  }
 
-@media (min-width: 991px) { /* lg 이상에서는 기본 검색 UI 보이도록 */
-  .mo-search {
-      display: none }
-  }
+
+
 }
 
 

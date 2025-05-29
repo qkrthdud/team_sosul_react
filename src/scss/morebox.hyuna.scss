@@ -1,0 +1,68 @@
+/* more 관련 스타일 */
+.more .more_box {
+    width: 49%;
+    margin-right: 2%;
+    padding: 40px;
+    border-radius: 10px;
+  }
+  @media (max-width: 991px) {
+    .more .more_box {
+      width: 100%;
+      margin: 0 0 20px 0;
+      padding: 20px;
+    }
+  }
+  .more .more_box:last-child {
+    margin-right: 0;
+  }
+  @media (max-width: 991px) {
+    .more .more_box:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .more .more_box .more_info {
+    width: 49%;
+    margin-right: 2%;
+  }
+  @media (max-width: 991px) {
+    .more .more_box .more_info {
+      order: 1;
+      width: 100%;
+      margin-right: 0;
+      padding-top: 20px;
+    }
+  }
+  .more .more_box img {
+    width: 49%;
+    height: auto;
+    margin-right: 0;
+    border-radius: 10px;
+  }
+  @media (max-width: 991px) {
+    .more .more_box img {
+      width: 100%;
+      order: 0;
+    }
+  }
+  .more .more_txt_box {
+    padding-bottom: 60px;
+  }
+  @media (max-width: 991px) {
+    .more .more_txt_box {
+      padding-bottom: 20px;
+    }
+  }
+  .more .sub_tit {
+    font-weight: 800;
+  }
+  .more .point_txt {
+    padding-bottom: 0.625rem;
+  }
+  .more .same_btn {
+    font-weight: 600;
+  }
+  @media (max-width: 991px) {
+    .more .same_btn {
+      max-width: none;
+    }
+  }
