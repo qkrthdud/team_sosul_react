@@ -37,6 +37,8 @@ function App() {
 
         <Route path="/list" element={<List></List>}>
         </Route>
+        <Route path="/product/list/:name" element={<div>컴포넌트 리스트 만들어야해</div>}>
+        </Route>
         <Route path="/onlyhere" element={<Only></Only>}>
         </Route>
         <Route path="/promotion" element={<Promotion></Promotion>}>

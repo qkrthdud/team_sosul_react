@@ -4,7 +4,7 @@ import SwiperThumb from '../components/SwiperThumb.tsx';
 import Banner from '../components/Banner.tsx';
 import Instagram from '../components/Instagram.tsx';
 import Morebox from '../components/Morebox.tsx';
-
+import Magazin from '../components/Magazin.tsx';
 
 
 
@@ -26,6 +26,7 @@ function Indexroute() {
                     des: true
                 }
                 }}></Banner>
+            <Magazin></Magazin>
             <Instagram></Instagram>
             <Banner dataobj={{
                 bg:"bg-gray_4",

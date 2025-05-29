@@ -59,7 +59,7 @@ function SwiperThumbInstagram() {
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <div className="main_con main_con_four gray5_bg p100">
+    <div className="main_con main_con_four p100">
       <div className="container">
         <div className="tit">
           <div className="main_tit panBlack">
