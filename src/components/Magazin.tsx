@@ -72,7 +72,7 @@ const MagazineSection: React.FC = () => {
 
   return (
     <div className="magazin py-16 md:py-24 bg-gray-100"> {/* Replaced p100 with py-16/py-24, gray5_bg with bg-gray-100 */}
-      <div className="container mx-auto px-4 lg:flex lg:flex-row lg:justify-between lg:items-center">
+      <div className="container mx-auto px-20 lg:flex lg:flex-row lg:justify-between lg:items-center">
         {/* Gallery Top Swiper (Small Images) */}
         <div className="w-full lg:w-[340px] mb-8 lg:mb-0 lg:mr-8 order-1 lg:order-1">
           <Swiper
@@ -96,7 +96,7 @@ const MagazineSection: React.FC = () => {
         </div>
 
         {/* Magazine Text Swiper */}
-        <div className="w-full lg:w-auto order-3 lg:order-2 flex-grow lg:mx-8 relative"> {/* Added relative for buttons */}
+        <div className="w-full lg:w-auto order-3 lg:order-2 lg:mx-8 relative"> {/* Added relative for buttons */}
           <Swiper
             modules={[Controller, Navigation]}
             spaceBetween={30} // Adjust as needed
@@ -127,7 +127,7 @@ const MagazineSection: React.FC = () => {
             ))}
           </Swiper>
           {/* Custom Navigation Buttons */}
-          <div className="magazin_btns flex justify-center lg:justify-start mt-6 lg:mt-4">
+          <div className="magazin_btns flex justify-center lg:justify-start mt-6 lg:mt-20">
             <div
               ref={prevRef}
               className="magazin-button-prev cursor-pointer w-10 h-10 bg-gray-300 hover:bg-gray-400 rounded-full flex items-center justify-center mr-2" // Example styling

@@ -39,7 +39,7 @@ const Quickicon:React.FC = () => {
                     <li className="loading">Loading...</li>
                 ) : (
                     categories.map((category) => (
-                        <li key={category.id} id={`category_${category.id}`} className={`order-[${category.decide}]`}>
+                        <li key={category.id} id={`category_${category.id}`}>
                             <Link to={`/product/list/${category.route}`}>
                                 {category.icon_svg ? (
                                     <span dangerouslySetInnerHTML={{ __html: category.icon_svg }} />
