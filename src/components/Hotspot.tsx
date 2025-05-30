@@ -1,4 +1,9 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
+
+import { supabase } from '../lib/supabaseClien';
+import type { Campaign_features } from '../types/common';
+
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper';
 import { Navigation, Autoplay } from 'swiper/modules'; // Autoplay 추가 가능성
@@ -8,68 +13,18 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 // import 'swiper/css/autoplay'; // Autoplay 사용 시
 
-// 슬라이드 데이터 타입 정의
-interface HotspotSlideData {
-  id: number;
-  imgSrc: string;
-  altText: string;
-  title: string;
-  description: string;
-}
 
-// 샘플 데이터 (이미지는 5개 종류가 반복되는 것으로 보입니다)
-const hotspotSlidesData: HotspotSlideData[] = [
-  {
-    id: 1,
-    imgSrc: '//item-team-sosul.vercel.app/img/image/hotplace_1.jpg',
-    altText: '인기스팟이미지1',
-    title: '소슬의 인기스팟을<br>안내해드립니다.',
-    description: '놓치면 아쉬운 점!',
-  },
-  {
-    id: 2,
-    imgSrc: '//item-team-sosul.vercel.app/img/image/hotplace_2.jpg',
-    altText: '인기스팟이미지2',
-    title: '소슬 포인트 <br>확인해보세요.',
-    description: '이것이 소슬 포인트!',
-  },
-  {
-    id: 3,
-    imgSrc: '//item-team-sosul.vercel.app/img/image/hotplace_3.jpg',
-    altText: '인기스팟이미지3',
-    title: '소슬의 인기스팟을<br>안내해드립니다.',
-    description: '놓치면 아쉬운 점!',
-  },
-  {
-    id: 4,
-    imgSrc: '//item-team-sosul.vercel.app/img/image/hotplace_4.jpg',
-    altText: '인기스팟이미지4',
-    title: '소슬 포인트 <br>확인해보세요.',
-    description: '이것이 소슬 포인트!',
-  },
-  {
-    id: 5,
-    imgSrc: '//item-team-sosul.vercel.app/img/image/hotplace_5.jpg',
-    altText: '인기스팟이미지5',
-    title: '소슬의 인기스팟을<br>안내해드립니다.',
-    description: '놓치면 아쉬운 점!',
-  },  
-  {
-    id: 6,
-    imgSrc: '//item-team-sosul.vercel.app/img/image/hotplace_5.jpg',
-    altText: '인기스팟이미지5',
-    title: '소슬의 인기스팟을<br>안내해드립니다.',
-    description: '놓치면 아쉬운 점!',
-  },
-  // 필요하다면 10개까지 데이터를 채우거나, loop를 true로 설정하여 5개로 반복시킬 수 있습니다.
-  // HTML에는 10개의 슬라이드 + 중복 슬라이드가 있었으므로, 여기서는 5개만 정의하고 loop를 사용하겠습니다.
-];
+
 
 
 const HotspotSection: React.FC = () => {
   const prevRef = useRef<HTMLDivElement>(null);
   const nextRef = useRef<HTMLDivElement>(null);
   const swiperRef = useRef<SwiperCore | null>(null);
+
+  const [hotspotSlidesData, setHotspot] = useState<Campaign_features[]>([]);
+  const [loding, setLoding] = useState<boolean>(true);
+
 
   useEffect(() => {
     if (swiperRef.current && !swiperRef.current.destroyed) {
@@ -82,6 +37,28 @@ const HotspotSection: React.FC = () => {
             swiperInstance.navigation.update();
         }
     }
+     const fetchHot = async () => {
+                try {
+                    const { data, error } = await supabase
+                        .from('campaign_features')
+                        .select('*')
+                        .order('id', { ascending: true });
+    
+                    if (error) {
+                        throw error;
+                    }
+    
+                    setHotspot(data || []);
+                } catch (error) {
+                    console.error('Error fetching categories:', error);
+                } finally {
+                    setLoding(false);
+                    console.log('Hotspot data loaded:', hotspotSlidesData);
+                }
+            };
+    
+      fetchHot();
+
   }, []); // 의존성 배열은 초기 마운트 시에만 실행되도록 비워둡니다.
 
   return (
@@ -94,7 +71,8 @@ const HotspotSection: React.FC = () => {
         </div>
 
         <section className="relative"> {/* Swiper와 버튼을 포함할 부모에 relative 추가 */}
-          <Swiper
+          {
+            loding ? "로딩중입니다." : <Swiper
             modules={[Navigation, Autoplay]} // Autoplay는 선택 사항
             onSwiper={(swiper) => { swiperRef.current = swiper; }}
             loop={true} // HTML에 duplicate 슬라이드가 많으므로 loop 사용
@@ -105,6 +83,37 @@ const HotspotSection: React.FC = () => {
               delay: 5000,
               disableOnInteraction: false,
             }}
+            breakpoints={{ // 반응형 설정
+              320: {
+                slidesPerView: 1.5,
+                spaceBetween: 15,
+                centeredSlides: true, 
+              },
+              // 640px 이상일 때 (sm)
+              640: {
+                slidesPerView: 2.5,
+                spaceBetween: 20,
+                centeredSlides: true,
+              },
+              // 768px 이상일 때 (md)
+              768: {
+                slidesPerView: 3.5,
+                spaceBetween: 20,
+                centeredSlides: true, 
+              },
+              // 1024px 이상일 때 (lg)
+              1024: {
+                slidesPerView: 4.5, // 한 번에 보여줄 슬라이드 수
+                spaceBetween: 30,
+                centeredSlides: true,
+              },
+               // 1280px 이상일 때 (xl)
+               1280: {
+                  slidesPerView: 5, // 한 번에 보여줄 슬라이드 수 (HTML에 5개 아이템 기준)
+                  spaceBetween: 30,
+                  centeredSlides: true,
+                },
+            }}
             navigation={{
               prevEl: prevRef.current,
               nextEl: nextRef.current,
@@ -112,11 +121,12 @@ const HotspotSection: React.FC = () => {
             className="conSwiper1"
           >
             {
+            hotspotSlidesData && 
             hotspotSlidesData.map((slide) => (
               <SwiperSlide key={slide.id} className="hotplace_card_box relative rounded-lg overflow-hidden group " style={{ width: '280px' }}> {/* 카드 스타일링 */}
                 <img
-                  src={slide.imgSrc}
-                  alt={slide.altText}
+                  src={slide.img_src}
+                  alt={slide.alt_text || slide.title }
                   className="w-full h-[330px] object-cover transition-transform duration-300 group-hover:scale-105" // 이미지 스타일
                 />
                 <div className="hotplace_txt absolute bottom-0 left-0 right-0 p-4 bg-opacity-50 text-white"> {/* 텍스트 오버레이 */}
@@ -126,12 +136,15 @@ const HotspotSection: React.FC = () => {
                   />
                   <div
                     className="basic_txt text-base"
-                    dangerouslySetInnerHTML={{ __html: slide.description }}
+                    dangerouslySetInnerHTML={{ __html: slide.description  as string }}
                   />
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
+
+          }
+          
 
           {/* 네비게이션 버튼 */}
           <div className="hotspot_btns absolute top-3/4 w-full flex justify-between px-4 z-10 pointer-events-none">

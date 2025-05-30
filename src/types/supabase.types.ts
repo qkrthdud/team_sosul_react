@@ -36,6 +36,29 @@ export type Database = {
             updated_at: string;
           };
         };
+        campaign_features: {
+          Row: {
+            id: number;
+            img_src: string;
+            alt_text?: string;
+            title: string;
+            description?: string;
+          };
+          Insert: {
+            id: number;
+            img_src: string;
+            alt_text?: string;
+            title: string;
+            description?: string;
+          };
+          Update: {
+            id: number;
+            img_src: string;
+            alt_text?: string;
+            title: string;
+            description?: string;
+          };
+        };
       };
     };
   };
