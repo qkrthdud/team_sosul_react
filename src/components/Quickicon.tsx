@@ -2,13 +2,13 @@ import React, {useEffect, useState} from 'react';
 import { supabase } from '../lib/supabaseClient';
 import type { Category } from '../types/common';
 
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../scss/quickicon.hyuna.scss';
 
 const Quickicon:React.FC = () => {
     const [categories, setCategories] = useState<Category[]>([]);
     const [loding, setLoding] = useState<boolean>(true);
-    const category = useParams<{ category: string }>();
+ 
 
     useEffect(() => {
         const fetchCategories = async () => {
