@@ -1,7 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 
-import { supabase } from '../lib/supabaseClien';
+
 import type { Campaign_features } from '../types/common';
+import { fetchData } from "../lib/api"; // fetchData 함수 import
 
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -23,7 +24,7 @@ const HotspotSection: React.FC = () => {
   const swiperRef = useRef<SwiperCore | null>(null);
 
   const [hotspotSlidesData, setHotspot] = useState<Campaign_features[]>([]);
-  const [loding, setLoding] = useState<boolean>(true);
+  const [loding, setLoading] = useState<boolean>(true);
 
 
   useEffect(() => {
@@ -37,29 +38,22 @@ const HotspotSection: React.FC = () => {
             swiperInstance.navigation.update();
         }
     }
-     const fetchHot = async () => {
-                try {
-                    const { data, error } = await supabase
-                        .from('campaign_features')
-                        .select('*')
-                        .order('id', { ascending: true });
-    
-                    if (error) {
-                        throw error;
-                    }
-    
-                    setHotspot(data || []);
-                } catch (error) {
-                    console.error('Error fetching categories:', error);
-                } finally {
-                    setLoding(false);
-                    console.log('Hotspot data loaded:', hotspotSlidesData);
-                }
-            };
-    
-      fetchHot();
 
-  }, []); // 의존성 배열은 초기 마운트 시에만 실행되도록 비워둡니다.
+    const fetchHot = async () => {
+        try {
+          const data = await fetchData("campaign_features", "select", {
+            order: { column: "id", ascending: true },
+          });
+          setHotspot((data as Campaign_features[]) || []);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        } finally {
+          setLoading(false);
+        }
+      };
+  
+      fetchHot();
+    }, []);
 
   return (
     <div className="hotspot py-16 md:py-24"> {/* p100 -> py-16/py-24 (Tailwind) */}
