@@ -19,14 +19,14 @@ const Layout: React.FC<LayoutProps> = ({ children, className }) => {
 
 
   const subcontentH = classNames({
-    'pt-[0]': isHome,
-    'pt-[100px]': !isHome,
+    'pt-[0] indexpage': isHome,
+    'pt-[100px] subpage': !isHome,
   });
 
   return (
-    <div className={className}>
+    <div className={`${className} min-h-[100vh] flex flex-col`}>
         <Hd isHome={isHome} ></Hd>
-        <div className={subcontentH }>
+        <div className={`${subcontentH} flex-grow  flex flex-col jusitfy-center align-center` }>
            {children}
         </div>      
         <Quick></Quick>

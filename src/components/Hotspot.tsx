@@ -41,6 +41,7 @@ const HotspotSection: React.FC = () => {
 
     const fetchHot = async () => {
         try {
+          // 테이블 정렬후 가져오기
           const data = await fetchData("campaign_features", "select", {
             order: { column: "id", ascending: true },
           });

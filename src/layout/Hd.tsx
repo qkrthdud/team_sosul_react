@@ -37,7 +37,7 @@ interface HdProps {
             </button> 
 
             <ul id="gnb" className="hidden lg:flex order-[0] gap-3 organic w-0"> 
-                <li><Link to="/list" className="color-white whitespace-nowrap">예약하기</Link></li>
+                <li><Link to="/product/list" className="color-white whitespace-nowrap">예약하기</Link></li>
                 <li><Link to="/onlyhere" className="color-white whitespace-nowrap">오직여기</Link></li>
                 <li><Link to="/promotion" className="color-white whitespace-nowrap">프로모션</Link></li>
                 <li><Link to="/brand" className="color-white whitespace-nowrap">브랜드</Link></li>
@@ -55,7 +55,7 @@ interface HdProps {
                         </svg>
                     <span className="hidden lg:block mr-6">예약확인</span></Link></li>
                 <li>
-                       <Link to="/member/login.php" className=" whitespace-nowrap d-flex">
+                       <Link to="/login" className=" whitespace-nowrap d-flex">
                         <svg xmlns="//www.w3.org/2000/svg" width="21" height="12" viewBox="0 0 21 12" fill="none">
                             <path d="M19.5 11V6" stroke="#3F422F" stroke-width="1.2" stroke-linejoin="round"></path>
                             <path d="M7.23251 10.9999H10.047L5.77351 1L1.5 10.9999H4.31452L5.77351 7.5861L7.23251 10.9999Z" stroke="#3F422F" stroke-width="1.2" stroke-linejoin="round"></path>
@@ -67,6 +67,9 @@ interface HdProps {
                         </svg>
                         <span className="hidden lg:block">로그인</span>
                     </Link>
+                </li>
+                <li>
+                    <Link to="/adm/register">등록</Link>
                 </li>
             </ul>
         </div>

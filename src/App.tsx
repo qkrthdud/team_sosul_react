@@ -8,7 +8,8 @@ import Indexroute from './route/Indexroute.tsx';
 import Brand from './pages/Brand.tsx';
 import Confirmation from './pages/Confirmation.tsx'
 import List from './pages/List.tsx';
-import Login from './pages/Login.tsx'
+import Login from './pages/Login.tsx';
+import Member from './pages/Member.tsx';
 import Only from './pages/Only.tsx';
 import Pay from './pages/Pay.tsx'
 import Promotion from './pages/Promotion.tsx'
@@ -34,10 +35,8 @@ function App() {
     <Routes>
         <Route path="/" element={<Indexroute></Indexroute>}>
         </Route>
-
-        <Route path="/list" element={<List></List>}>
-        </Route>
-        <Route path="/product/list/:name" element={<div>컴포넌트 리스트 만들어야해</div>}>
+       
+        <Route path="/product/list/:name?" element={<List></List>}>
         </Route>
         <Route path="/onlyhere" element={<Only></Only>}>
         </Route>
@@ -50,6 +49,8 @@ function App() {
         </Route>
         <Route path="/login" element={<Login></Login>}>
         </Route>
+        <Route path="/join" element={<Member></Member>}>
+        </Route>
         <Route path="/pay" element={<Pay></Pay>}>
         </Route>
         <Route path="/reservation" element={<Reservation></Reservation>}>
@@ -58,7 +59,7 @@ function App() {
         </Route>
         <Route path="/promotion" element={<p style={{height:"100vh"}}>빨랑해</p>}>
         </Route>
-        <Route path="/user/register" element={<CampgroundForm></CampgroundForm>}>
+        <Route path="/adm/register" element={<CampgroundForm></CampgroundForm>}>
         </Route>
         <Route path="*" element={<p style={{height:"100vh"}}>주소 잘 못쳤지 </p>}>
         </Route>

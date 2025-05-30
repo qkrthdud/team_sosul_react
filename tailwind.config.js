@@ -3,6 +3,7 @@ export default {
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  important: true,
   theme: {
     extend: {
       // ✅ 사용자 정의 브레이크포인트

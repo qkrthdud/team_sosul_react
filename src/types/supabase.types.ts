@@ -59,7 +59,54 @@ export type Database = {
             description?: string;
           };
         };
-      };
+        members : {
+          Row:{
+              userid: string;
+              email: string;
+              password: string;
+              username : string;
+              birth_year: string;
+              birth_month: string;
+              birth_day: string;
+              phone1: string;
+              phone2: string;
+              phone3: string;
+              gender: string;
+              preferred_regions?: string[];
+              marketing?: boolean;
+          };
+          Insert: {
+            userid: string;
+            email: string;
+            password: string;
+            username : string;
+            birth_year: string;
+            birth_month: string;
+            birth_day: string;
+            phone1: string;
+            phone2: string;
+            phone3: string;
+            gender: string;
+            preferred_regions?: string[];
+            marketing?: boolean;
+          };
+          Update: {
+            userid: string;
+              email: string;
+              password: string;
+              username : string;
+              birth_year: string;
+              birth_month: string;
+              birth_day: string;
+              phone1: string;
+              phone2: string;
+              phone3: string;
+              gender: string;
+              preferred_regions?: string[];
+              marketing?: boolean;
+          };
+        };
+        
     };
   };
-  
+}

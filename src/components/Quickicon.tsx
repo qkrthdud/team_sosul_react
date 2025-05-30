@@ -2,12 +2,14 @@ import React, {useEffect, useState} from 'react';
 import { supabase } from '../lib/supabaseClient';
 import type { Category } from '../types/common';
 
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import '../scss/quickicon.hyuna.scss';
 
 const Quickicon:React.FC = () => {
     const [categories, setCategories] = useState<Category[]>([]);
     const [loding, setLoding] = useState<boolean>(true);
+    const category = useParams<{ category: string }>();
+
     useEffect(() => {
         const fetchCategories = async () => {
             try {
@@ -40,7 +42,7 @@ const Quickicon:React.FC = () => {
                 ) : (
                     categories.map((category) => (
                         <li key={category.id} id={`category_${category.id}`}>
-                            <Link to={`/product/list/${category.route}`}>
+                            <Link to={`/product/list/${category.route}`} >
                                 {category.icon_svg ? (
                                     <span dangerouslySetInnerHTML={{ __html: category.icon_svg }} />
                                 ) : (
