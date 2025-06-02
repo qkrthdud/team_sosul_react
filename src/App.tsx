@@ -16,7 +16,7 @@ import Promotion from './pages/Promotion.tsx'
 import Reservation from './pages/Reservation.tsx';
 import View from './pages/View.tsx';
 import CampgroundForm from './route/CampgroundForm.tsx';
-
+import P404 from './pages/P404.tsx';
 
 
 function App() {
@@ -62,6 +62,8 @@ function App() {
         <Route path="/adm/register" element={<CampgroundForm></CampgroundForm>}>
         </Route>
         <Route path="*" element={<p style={{height:"100vh"}}>주소 잘 못쳤지 </p>}>
+        </Route>
+        <Route path="/404" element={<p style={{height:"100vh"}}><P404></P404></p>}>
         </Route>
     </Routes>
     </Layout>
