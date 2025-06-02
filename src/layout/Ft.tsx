@@ -19,7 +19,7 @@ const Ft:React.FC = () => {
                             <a href="">개인정보처리방침</a>
                             <a href="">이용약관</a>
                             <a href="/page/sitemap.php">사이트맵</a>
-                            <a href="">제품문의</a>
+                            <a href="">입점문의</a>
                         </div>
                     </div>
 
@@ -31,7 +31,7 @@ const Ft:React.FC = () => {
                     <div className="btm_txt_in">(주)소슬은 통신판매 중개자로서 통신판매의 당사자가 아니며 상품의 예약, 이용 및 환불 등과 관련한 의무와 책임은 각 판매자에게 있습니다.</div>
                 </div>
                 <ul className="sns d-flex align-items-center">
-                    <li className="btm_link_tit">소슬 SNS</li>
+                    <li className="btm_link_tit"></li>
                     <ul className="sns_icon_box d-flex align-items-center">
                         <li className="ytube">
                             <a className="icon_area" href="">
@@ -64,7 +64,6 @@ const Ft:React.FC = () => {
             </div>
             <div className="btm_btm d-flex flex-lg-nowrap flex-wrap align-items-center justify-content-between">
                 <ul className="btm_copy">
-                    <li>(주)소슬은 통신판매 중개자로서 통신판매의 당사자가 아니며 상품의 예약, 이용 및 환불 등과 관련한 의무와 책임은 각 판매자에게 있습니다.</li>
                     <li className="copyright gray3">Copyright©SOSUL</li>
                 </ul>
                 <ul className="app_down d-flex align-items-center">
