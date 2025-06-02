@@ -1,13 +1,13 @@
 # team_sosul_react
-![team_sosul](https://github.com/qkrthdud/team_sosul_react/blob/main/sosul_readmeimg.png?raw=true)
+<img width="1977" alt="Sosul _React Project" src="https://github.com/user-attachments/assets/8eae8fe1-875a-4bcf-8f5d-9c7ee50e23af" />
 ## 1. Team
 - 기획자: 김은정    
   서비스 콘셉트 기획, 사용자 흐름 설계, 콘텐츠 구조화
 
-- 디자이너: 손재은 , 임예나  
+- 디자이너: 손재은   
   Figma 기반 UI/UX 설계, 감정 키워드 기반 컬러 시스템 구축, 디자인 시스템 구성
 
-- 퍼블리셔: 김현아  , 임예나  
+- 퍼블리셔: 김현아
   반응형 UI 마크업, 접근성 고려 HTML/CSS 구조 설계, 컴포넌트 스타일링(Tailwind 등)
 
 - 프론트엔드: 박소영  
