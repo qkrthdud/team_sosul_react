@@ -41,7 +41,6 @@ const HotspotSection: React.FC = () => {
 
     const fetchHot = async () => {
         try {
-          // 테이블 정렬후 가져오기
           const data = await fetchData("campaign_features", "select", {
             order: { column: "id", ascending: true },
           });
@@ -122,9 +121,9 @@ const HotspotSection: React.FC = () => {
                 <img
                   src={slide.img_src}
                   alt={slide.alt_text || slide.title }
-                  className="w-full h-[330px] object-cover transition-transform duration-300 group-hover:scale-105" // 이미지 스타일
+                  className="w-full object-cover transition-transform duration-300 group-hover:scale-105" // 이미지 스타일
                 />
-                <div className="hotplace_txt absolute bottom-0 left-0 right-0 p-4 bg-opacity-50 text-white"> {/* 텍스트 오버레이 */}
+                <div className="hotplace_txt absolute bg-opacity-50 text-white"> {/* 텍스트 오버레이 */}
                   <div
                     className="sub_tit text-2xl font-semibold mb-1" // white 클래스는 text-white로 대체
                     dangerouslySetInnerHTML={{ __html: slide.title }}
@@ -142,11 +141,11 @@ const HotspotSection: React.FC = () => {
           
 
           {/* 네비게이션 버튼 */}
-          <div className="hotspot_btns absolute top-3/4 w-full flex justify-between px-4 z-10 pointer-events-none">
+          <div className="hotspot_btns absolute w-full flex px-4 z-10 pointer-events-none">
             {/* pointer-events-none을 부모에 주고, 버튼 자체에는 pointer-events-auto를 줘서 버튼만 클릭되도록 */}
             <div
               ref={prevRef}
-              className="hotspot-button-prev cursor-pointer w-12 h-12 bg-white/70 hover:bg-white rounded-full flex items-center justify-center shadow-md pointer-events-auto"
+              className="hotspot-button-prev cursor-pointer bg-white/70 hover:bg-white flex items-center justify-center shadow-md pointer-events-auto"
               role="button"
               aria-label="Previous slide"
             >
@@ -157,7 +156,7 @@ const HotspotSection: React.FC = () => {
             </div>
             <div
               ref={nextRef}
-              className="hotspot-button-next cursor-pointer w-12 h-12 bg-white/70 hover:bg-white rounded-full flex items-center justify-center shadow-md pointer-events-auto"
+              className="hotspot-button-next cursor-pointer bg-white/70 hover:bg-white flex items-center justify-center shadow-md pointer-events-auto"
               role="button"
               aria-label="Next slide"
             >
