@@ -6,7 +6,7 @@ type CampgroundFormData = {
   location?: string;
   price?: number;
   discount_rate?: number;
-  category: string;
+  abcd_eunm: string;
   site_numbers?: string[];
   description?: string;
   tags?: string[];
@@ -94,17 +94,17 @@ export default function CampgroundForm() {
       <div>
         <label className="block font-bold mb-1">카테고리 *</label>
         <select
-          {...register("category", { required: "카테고리는 필수입니다" })}
+          {...register("abcd_eunm", { required: "카테고리는 필수입니다" })}
           className="border p-2 w-full rounded"
         >
           <option value="">선택하세요</option>
-          <option value="CARAVAN">카라반</option>
-          <option value="GLAMPING">글램핑</option>
-          <option value="TENT">텐트</option>
-          <option value="AUTO">오토캠핑</option>
+          <option value="a">카라반</option>
+          <option value="b">글램핑</option>
+          <option value="c">텐트</option>
+          <option value="d">오토캠핑</option>
         </select>
-        {errors.category && (
-          <p className="text-red-500 text-sm">{errors.category.message}</p>
+        {errors.abcd_eunm && (
+          <p className="text-red-500 text-sm">{errors.abcd_eunm.message}</p>
         )}
       </div>
 
