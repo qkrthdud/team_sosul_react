@@ -14,9 +14,15 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             gap: 5px;
             font-size: 16px;
             color: #777;
+            width: 80px;
+            height: 100px;
+            border: 1px solid #f6f6f6;
+            border-radius: 20px;
+            box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
 
             img {
                 width: 50px;
@@ -33,12 +39,15 @@
             }
         }
         a:hover {
-            color: var(--sub_apricot);
+            // color: var(--sub_apricot);
+            background-color: var(--sub_apricot);
+            color: #fff;
         }
         a:hover svg > path,
         a:hover svg > circle,
         a:hover svg > ellipse {
-            stroke: var(--sub_apricot);
+            // stroke: var(--sub_apricot);
+            stroke: #fff;
         }
         
     }
