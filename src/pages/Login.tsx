@@ -39,11 +39,7 @@ const Login: React.FC = () => {
                                             <button type="submit" className="login-btn list_tit">로그인</button>
                                             <p className="basic_txt">계정이 없으신가요?</p>
                                             <p className="main_tit"><Link to="/join">회원가입</Link></p>
-                                        </form>
-                                    
-                      
-
-           
+                                        </form>          
                 </div>
             </div>
         </div>

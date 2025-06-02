@@ -35,6 +35,7 @@ const Morebox: React.FC<MoreboxProps> = ({ dataobj  }) => {
               alt={dataobj.img.alt}
             />
           </div>
+          
 
        
 

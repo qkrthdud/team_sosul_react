@@ -60,13 +60,13 @@ export default function CampgroundForm() {
 
       console.log("등록:", result);     
       // setPronm(data.campground_name);
-      alert(data.campground_name + " 제품 등록되었습니다.");
+      alert(data.campground_name + " 캠핑장 등록이 완료되었습니다.");
       reset();
      
       // setIsRegistered(true)
   } catch (error) {
       console.error("등록 실패:", error);
-      alert("제품등록이 실패했습니다.");
+      alert("필수 항목을 모두 기재해 주세요.");
   }
   };
 

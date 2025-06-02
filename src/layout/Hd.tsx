@@ -69,7 +69,7 @@ interface HdProps {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/adm/register">등록</Link>
+                    <Link to="/adm/register">캠핑장 등록하기</Link>
                 </li>
             </ul>
         </div>
