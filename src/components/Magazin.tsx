@@ -130,7 +130,7 @@ const MagazineSection: React.FC = () => {
           <div className="magazin_btns flex justify-center lg:justify-start mt-6 lg:mt-20">
             <div
               ref={prevRef}
-              className="magazin-button-prev cursor-pointer w-10 h-10 bg-gray-300 hover:bg-gray-400 rounded-full flex items-center justify-center mr-2" // Example styling
+              className="magazin-button-prev cursor-pointer w-10 h-10 bg-gray-300 hover:bg-gray-400 flex items-center justify-center mr-2" // Example styling
               role="button"
               aria-label="Previous slide"
             >
@@ -141,7 +141,7 @@ const MagazineSection: React.FC = () => {
             </div>
             <div
               ref={nextRef}
-              className="magazin-button-next cursor-pointer w-10 h-10 bg-gray-300 hover:bg-gray-400 rounded-full flex items-center justify-center" // Example styling
+              className="magazin-button-next cursor-pointer w-10 h-10 bg-gray-300 hover:bg-gray-400 flex items-center justify-center" // Example styling
               role="button"
               aria-label="Next slide"
             >

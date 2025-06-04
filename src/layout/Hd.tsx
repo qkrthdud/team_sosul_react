@@ -40,7 +40,7 @@ interface HdProps {
                 <li><Link to="/product/list" className="color-white whitespace-nowrap">예약하기</Link></li>
                 <li><Link to="/onlyhere" className="color-white whitespace-nowrap">오직여기</Link></li>
                 <li><Link to="/promotion" className="color-white whitespace-nowrap">프로모션</Link></li>
-                <li><Link to="/brand" className="color-white whitespace-nowrap">브랜드</Link></li>
+                <li><Link to="/Wishlist" className="color-white whitespace-nowrap">위시리스트</Link></li>
             </ul>
 
             <ul className="util flex order-2  whitespace-nowrap items-center justify-end gap-lg-5 gap-2 font-point_txt organic w-0">

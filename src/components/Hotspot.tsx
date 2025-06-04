@@ -57,7 +57,7 @@ const HotspotSection: React.FC = () => {
 
   return (
     <div className="hotspot py-16 md:py-24"> {/* p100 -> py-16/py-24 (Tailwind) */}
-      <div className="container mx-auto px-4 text-center md:text-left"> {/* container는 중앙 정렬 및 패딩 */}
+      <div className="container max-w-[1440px] mx-auto px-4 text-center md:text-left">
         <div className="point_txt text-green-600 font-semibold mb-2 lg:hidden">BEST SPOT</div> {/* organic -> text-green-600, d-lg-none -> lg:hidden */}
         <div className="main_tit text-3xl md:text-4xl font-bold mb-8 md:mb-12">
           요즘 주목받는
