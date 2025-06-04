@@ -56,8 +56,6 @@ function App() {
         </Route>
         <Route path="/view" element={<View></View>}>
         </Route>
-        <Route path="/promotion" element={<p style={{height:"100vh"}}>빨랑해</p>}>
-        </Route>
         <Route path="/adm/register" element={<CampgroundForm></CampgroundForm>}>
         </Route>
         <Route path="*" element={<P404></P404>}>
