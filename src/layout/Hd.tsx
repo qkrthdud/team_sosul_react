@@ -3,8 +3,10 @@ import { useEffect } from 'react';
 
 interface HdProps {
     isHome: boolean;
+    isMember : boolean,
+    setIsMember : React.Dispatch<React.SetStateAction<boolean>>; // isMember 상태를 업데이트하는 함수
   }
- const Hd: React.FC<HdProps> = ({ isHome })=> {
+ const Hd: React.FC<HdProps> = ({ isHome, isMember, setIsMember  })=> {
 
 
  
@@ -55,7 +57,8 @@ interface HdProps {
                         </svg>
                     <span className="hidden lg:block mr-6">예약확인</span></Link></li>
                 <li>
-                       <Link to="/login" className=" whitespace-nowrap d-flex">
+                    {
+                        isMember ? <Link to="/login" className=" whitespace-nowrap d-flex">
                         <svg xmlns="//www.w3.org/2000/svg" width="21" height="12" viewBox="0 0 21 12" fill="none">
                             <path d="M19.5 11V6" stroke="#3F422F" stroke-width="1.2" stroke-linejoin="round"></path>
                             <path d="M7.23251 10.9999H10.047L5.77351 1L1.5 10.9999H4.31452L5.77351 7.5861L7.23251 10.9999Z" stroke="#3F422F" stroke-width="1.2" stroke-linejoin="round"></path>
@@ -66,7 +69,21 @@ interface HdProps {
                             <path d="M10.046 11V6" stroke="#3F422F" stroke-width="1.2" stroke-linejoin="round"></path>
                         </svg>
                         <span className="hidden lg:block">로그인</span>
-                    </Link>
+                    </Link> 
+                     : <Link to="/" className=" whitespace-nowrap d-flex">
+                     <svg xmlns="//www.w3.org/2000/svg" width="21" height="12" viewBox="0 0 21 12" fill="none">
+                         <path d="M19.5 11V6" stroke="#3F422F" stroke-width="1.2" stroke-linejoin="round"></path>
+                         <path d="M7.23251 10.9999H10.047L5.77351 1L1.5 10.9999H4.31452L5.77351 7.5861L7.23251 10.9999Z" stroke="#3F422F" stroke-width="1.2" stroke-linejoin="round"></path>
+                         <path d="M4.31592 11H7.23391" stroke="#3F422F" stroke-width="1.2" stroke-linejoin="round"></path>
+                         <path d="M1.5 11V6" stroke="#3F422F" stroke-width="1.2" stroke-linejoin="round"></path>
+                         <path d="M5.77405 1L7.42447 4.85502L8.79551 3.46322L10.1717 4.85502L11.5479 3.46322L12.9242 4.85502L14.2952 3.46322L15.6714 4.85502L16.4992 4.01994L15.2058 1H5.77405Z" stroke="#3F422F" stroke-width="1.2" stroke-linejoin="round"></path>
+                         <path d="M14.2954 3.46313L12.9244 4.85493L11.5482 3.46313L10.1719 4.85493L8.79572 3.46313L7.42468 4.85493L10.0478 10.9999H19.4795L16.4994 4.01985L15.6716 4.85493L14.2954 3.46313Z" stroke="#3F422F" stroke-width="1.2" stroke-linejoin="round"></path>
+                         <path d="M10.046 11V6" stroke="#3F422F" stroke-width="1.2" stroke-linejoin="round"></path>
+                     </svg>
+                     <span className="hidden lg:block">로그아웃</span>
+                 </Link> 
+                    }
+                    
                 </li>
                 <li>
                     <Link to="/adm/register">캠핑장 등록하기</Link>

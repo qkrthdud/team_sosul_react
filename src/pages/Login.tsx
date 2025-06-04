@@ -11,10 +11,15 @@ type MembersLogin = {
     userid: string;
     password: string;
 };
+
+type LoginProps = {
+    isMember: boolean;  
+    setIsMember: React.Dispatch<React.SetStateAction<boolean>>; // isMember 상태를 업데이트하는 함수
+};
   
 
-const Login: React.FC = () => {
-    const [isMember, setIsMember] = useState<boolean>(false);
+const Login: React.FC<LoginProps> = ({isMember, setIsMember}) => {
+   
   const [userid, setUserid] = useState<string>("");
 
 
@@ -92,7 +97,7 @@ const Login: React.FC = () => {
             <Link to="/reset" className="sub2 basic_txt text-gray_3 underline-offset-4">비밀번호 재설정</Link>
           </div>
 
-          <button type="submit" className="login-btn list_tit bg-[#ddd] mt-[50px] hover:bg-sub_apricot hover:text-white">{ isMember ? "비로그인" : "로그인" }</button>
+          <button type="submit" className="login-btn list_tit bg-[#ddd] mt-[50px] hover:bg-sub_apricot hover:text-white">{ !isMember && "로그인" }</button>
 
           <button type="button" className="login-btn list_tit mt-[25px] mb-[40px] flex center items-center justify-center gap-[20px] bg-[#FEE500] text-[#000]">
             <img src="/img/icon/kakao.png" alt="카카오 로그인" />

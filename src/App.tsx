@@ -1,4 +1,4 @@
-
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom'
 
 import './App.css'
@@ -22,7 +22,7 @@ import P404 from './pages/P404.tsx';
 
 function App() {
 
-  
+  const [isMember, setIsMember] = useState<boolean>(false); 
 
 // xs:text-[...], sm:text-[...], md:text-[...], lg:text-[...], xl:text-[...], xxl:text-[...], 3xl:text-[...]
 // xs:p-4, sm:p-4, md:p-4, ... 와 같이 다양한 조합으로 사용됨
@@ -34,7 +34,7 @@ function App() {
 
 
   return (
-   <Layout className='font-suit'> 
+   <Layout className='font-suit' isMember={isMember} setIsMember={setIsMember} > 
     <Routes>
         <Route path="/" element={<Indexroute></Indexroute>}>
         </Route>
@@ -49,7 +49,7 @@ function App() {
         </Route>
         <Route path="/confirmation" element={<Confirmation></Confirmation>}>
         </Route>
-        <Route path="/login" element={<Login></Login>}>
+        <Route path="/login" element={<Login isMember={isMember} setIsMember={setIsMember} ></Login>}>
         </Route>
         <Route path="/join" element={<Member></Member>}>
         </Route>
