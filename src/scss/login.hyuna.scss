@@ -1,0 +1,80 @@
+.Login {
+    display: flex;
+    justify-content: center;
+    color: black;
+    padding: inherit;
+    margin-bottom: 50px;
+    font-weight: 800;
+  }
+  
+  .login {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10%;
+    /* Hide default checkbox */
+    /* Create custom checkbox */
+    /* Custom checkbox appearance */
+    /* Change color when checked */
+    p {
+        font-weight: 700;
+    }
+    .sub0 {
+        input[type=checkbox]::before {
+            display: none;
+        }
+        .sub2 {
+            text-decoration: underline;
+        }
+    } 
+    .input-group {
+        text-align: center;
+        color: #777777;
+        input {
+            width: 454px;
+            border-radius: 20px;
+            color: #777;
+            box-sizing: border-box;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+    }
+  }
+  .login button.login-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    color: #777777;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  .login input[type=checkbox].custom-checkbox {
+    display: none;
+  }
+  .login input[type=checkbox].custom-checkbox + label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 20px;
+  }
+  .login input[type=checkbox].custom-checkbox + label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  .login input[type=checkbox].custom-checkbox:checked + label::before {
+    background-color: #D68B30; /* Change the background color */
+    border-color: #D68B30; /* Change the border color */
+  }

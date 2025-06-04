@@ -87,31 +87,40 @@ export default function CampgroundForm() {
         </div>
 
         <div>
-          <label className="block font-bold mb-1">주소</label>
+          <label className="block font-bold mb-1">주소 *</label>
           <input
-            {...register("location")}
+            {...register("location" , { required: "주소는 필수입니다" })}
             className="border p-2 w-full rounded"
             placeholder="주소를 입력하세요"
           />
+          {errors.location && (
+            <p className="text-red-500 text-sm">{errors.location.message}</p>
+          )}
         </div>
 
         <div>
-          <label className="block font-bold mb-1">가격</label>
+          <label className="block font-bold mb-1">가격 *</label>
           <input
             type="number"
-            {...register("price")}
+            {...register("price", { required: "가격은 필수입니다" })}
             className="border p-2 w-full rounded"
           />
+          {errors.price && (
+            <p className="text-red-500 text-sm">{errors.price.message}</p>
+          )}
         </div>
 
         <div>
-          <label className="block font-bold mb-1">할인율 (%)</label>
+          <label className="block font-bold mb-1">할인율 (%)*</label>
           <input
             type="number"
             step="0.01"
-            {...register("discount_rate")}
+            {...register("discount_rate", { required: "할인율은 필수입니다, 없을경우 0을 기재해주세요" })}
             className="border p-2 w-full rounded"
           />
+          {errors.discount_rate && (
+            <p className="text-red-500 text-sm">{errors.discount_rate.message}</p>
+          )}
         </div>
 
         <div>

@@ -1,6 +1,6 @@
 # team_sosul_react
-![team_sosul](https://github.com/qkrthdud/team_sosul_react/blob/main/sosul_readmeimg.png?raw=true)
-## 1. Team
+<img width="1977" alt="Sosul _React Project" src="https://github.com/user-attachments/assets/8eae8fe1-875a-4bcf-8f5d-9c7ee50e23af" />
+## 1. Team  
 - 기획자: 김은정    
   서비스 콘셉트 기획, 사용자 흐름 설계, 콘텐츠 구조화
 
