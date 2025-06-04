@@ -45,7 +45,7 @@ interface HdProps {
 
             <ul className="util flex order-2  whitespace-nowrap items-center justify-end gap-lg-5 gap-2 font-point_txt organic w-0">
                 <li>
-                    <Link to="" className=" whitespace-nowrap d-flex">
+                    <Link to="/confirmation" className=" whitespace-nowrap d-flex">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="//www.w3.org/2000/svg">
                             <path d="M16.9529 4.69562H4V16H16.9529V4.69562Z" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
                             <path d="M4 8.08698H16.9529" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
