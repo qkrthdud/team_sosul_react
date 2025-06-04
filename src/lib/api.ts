@@ -22,51 +22,78 @@ type FetchOptions<T extends TableName> =
       match: Partial<Tables[T]["Row"]>;
     }; // delete
 
-export const fetchData = async <
-  T extends TableName,
-  O extends Operation
->(
-  tableName: T,
-  operation: O,
-  options?: FetchOptions<T>
-): Promise<Tables[T]["Row"][] | null> => {
-  try {
-    let query = supabase.from(tableName);
+    export const fetchData = async <
+    T extends TableName,
+    O extends Operation
+  >(
+    tableName: T,
+    operation: O,
+    options?: FetchOptions<T>
+  ): Promise<Tables[T]["Row"][] | null> => {
+    try {
+      if (operation === "select") {
+        const selectOptions = options as Extract<FetchOptions<T>, { columns?: string }>;
 
-    switch (operation) {
-      case "select":
-        query = query.select((options as any).columns || "*");
-        if ((options as any).order) {
-          query = query.order((options as any).order.column, {
-            ascending: (options as any).order.ascending,
+        let query = supabase.from<T, Tables[T]["Row"]>(tableName).select(selectOptions.columns || "*");
+  
+        if (selectOptions.order) {
+          query = query.order(selectOptions.order.column  as string, {
+            ascending: selectOptions.order.ascending,
           });
         }
-        break;
-      case "insert":
-        query = query.insert((options as any).data);
-        break;
-      case "update":
-        query = query.update((options as any).data).match((options as any).match);
-        break;
-      case "delete":
-        query = query.delete().match((options as any).match);
-        break;
-      default:
-        throw new Error("Invalid operation");
-    }
-
-    const { data, error } = await query;
-
-    if (error) {
+  
+        const response = await query;
+        const { data, error } = response as {
+          data: Tables[T]["Row"][] | null;
+          error: Error | null;
+        };
+        if (error) throw error;
+        return data; 
+      }
+  
+      if (operation === "insert") {
+        const insertOptions = options as Extract<FetchOptions<T>, { data: Tables[T]["Insert"] }>;
+        const { data, error } = await supabase
+          .from(tableName)
+          .insert(insertOptions.data);
+        if (error) throw error;
+        return data;
+      }
+  
+      if (operation === "update") {
+        const updateOptions = options as Extract<
+          FetchOptions<T>,
+          { data: Partial<Tables[T]["Update"]>; match: Partial<Tables[T]["Row"]> }
+        >;
+        const { data, error } = await supabase
+          .from(tableName)
+          .update(updateOptions.data)
+          .match(updateOptions.match);
+        if (error) throw error;
+        return data;
+      }
+  
+      if (operation === "delete") {
+        const deleteOptions = options as Extract<
+          FetchOptions<T>,
+          { match: Partial<Tables[T]["Row"]> }
+        >;
+        const { data, error } = await supabase
+          .from(tableName)
+          .delete()
+          .match(deleteOptions.match);
+        if (error) throw error;
+        return data;
+      }
+  
+      throw new Error("Invalid operation");
+    } catch (error) {
+      console.error(`Error performing ${operation} on ${tableName}:`, error);
       throw error;
     }
-
-    return data;
-  } catch (error) {
-    console.error(`Error performing ${operation} on ${tableName}:`, error);
-    throw error;
-  }
-};
+  };
+  
+  
 
 
 

@@ -39,8 +39,8 @@ const Login: React.FC = () => {
                                 </label>
                                 <Link to="/reset" className="sub2 basic_txt text-gray_3 underline-offset-4">비밀번호 재설정</Link>
                             </div>
-                            <button type="submit" className="login-btn list_tit bg-[#ddd] hover:bg-sub_apricot hover:text-white">로그인</button>
-                            <button type="submit" className="login-btn list_tit my-[40px] flex center items-center justify-center gap-[20px] bg-[#FEE500] text-[#000]">
+                            <button type="submit" className="login-btn list_tit bg-[#ddd] mt-[50px] hover:bg-sub_apricot hover:text-white">로그인</button>
+                            <button type="submit" className="login-btn list_tit mt-[25px] mb-[40px] flex center items-center justify-center gap-[20px] bg-[#FEE500] text-[#000]">
                                 <img src="/img/icon/kakao.png" alt="" className=""/>
                                 카카오로 3초만에 시작하기
                             </button>

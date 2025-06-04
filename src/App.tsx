@@ -61,9 +61,7 @@ function App() {
         </Route>
         <Route path="/adm/register" element={<CampgroundForm></CampgroundForm>}>
         </Route>
-        <Route path="*" element={<p style={{height:"100vh"}}>주소 잘 못쳤지 </p>}>
-        </Route>
-        <Route path="/404" element={<p style={{height:"100vh"}}><P404></P404></p>}>
+        <Route path="*" element={<p style={{height:"100vh"}}><P404></P404></p>}>
         </Route>
     </Routes>
     </Layout>
