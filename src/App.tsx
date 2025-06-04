@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom'
 
 import './App.css'
@@ -20,6 +21,8 @@ import P404 from './pages/P404.tsx';
 
 
 function App() {
+
+  
 
 // xs:text-[...], sm:text-[...], md:text-[...], lg:text-[...], xl:text-[...], xxl:text-[...], 3xl:text-[...]
 // xs:p-4, sm:p-4, md:p-4, ... 와 같이 다양한 조합으로 사용됨
