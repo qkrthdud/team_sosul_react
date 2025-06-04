@@ -3,11 +3,15 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import '../scss/login.hyuna.scss';
 
+type LoginFormData = {
+    user_id: string;
+    password: string;
+  };
 
 const Login: React.FC = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit } = useForm<LoginFormData>();
 
-    const onSubmit = (data: any) => {
+    const onSubmit = (data: LoginFormData) => {
         console.log(data);
     };
     return (
