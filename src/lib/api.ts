@@ -32,24 +32,33 @@ type FetchOptions<T extends TableName> =
   ): Promise<Tables[T]["Row"][] | null> => {
     try {
       if (operation === "select") {
-        const selectOptions = options as Extract<FetchOptions<T>, { columns?: string }>;
-
-        let query = supabase.from<T, Tables[T]["Row"]>(tableName).select(selectOptions.columns || "*");
-  
+        const selectOptions = options as Extract<FetchOptions<T>, { columns?: string; order?: { column: keyof Tables[T]["Row"]; ascending: boolean } }>;
+      
+        let query = supabase
+          .from<T, Tables[T]["Row"]>(tableName)
+          .select(selectOptions.columns || "*");
+      
         if (selectOptions.order) {
-          query = query.order(selectOptions.order.column  as string, {
+          query = query.order(selectOptions.order.column as string, {
             ascending: selectOptions.order.ascending,
           });
         }
-  
+      
         const response = await query;
+
         const { data, error } = response as {
           data: Tables[T]["Row"][] | null;
           error: Error | null;
         };
-        if (error) throw error;
-        return data; 
+      
+        if (error) {
+          throw error;
+        }
+      
+        return data;
       }
+      
+     
   
       if (operation === "insert") {
         const insertOptions = options as Extract<FetchOptions<T>, { data: Tables[T]["Insert"] }>;
