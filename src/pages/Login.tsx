@@ -41,10 +41,10 @@ const Login: React.FC = () => {
       if (result && result.length > 0) {
         console.log("🔐 인증된 사용자:", result[0]); // ✅ 일치한 사용자 정보 이것도 맞아
 
-        alert("로그인 성공");
+       
         setUserid(data.userid);
         setIsMember(true);
-        
+        alert(userid+"로그인 성공");
         reset();
         window.location.href = "/";
 
@@ -74,6 +74,7 @@ const Login: React.FC = () => {
           </div>
 
           <div className="input-group basic_txt">
+            
             <input
               type="password"
               className="border border-gray_3"
@@ -91,7 +92,7 @@ const Login: React.FC = () => {
             <Link to="/reset" className="sub2 basic_txt text-gray_3 underline-offset-4">비밀번호 재설정</Link>
           </div>
 
-          <button type="submit" className="login-btn list_tit bg-[#ddd] mt-[50px] hover:bg-sub_apricot hover:text-white">로그인</button>
+          <button type="submit" className="login-btn list_tit bg-[#ddd] mt-[50px] hover:bg-sub_apricot hover:text-white">{ isMember ? "비로그인" : "로그인" }</button>
 
           <button type="button" className="login-btn list_tit mt-[25px] mb-[40px] flex center items-center justify-center gap-[20px] bg-[#FEE500] text-[#000]">
             <img src="/img/icon/kakao.png" alt="카카오 로그인" />
