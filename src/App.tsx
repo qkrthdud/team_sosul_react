@@ -5,7 +5,7 @@ import './App.css'
 import Layout from './layout/Layout.tsx';
 import Indexroute from './route/Indexroute.tsx';
 
-import Brand from './pages/Brand.tsx';
+import Wishlist from './pages/Wishlist.tsx';
 import Confirmation from './pages/Confirmation.tsx'
 import List from './pages/List.tsx';
 import Login from './pages/Login.tsx';
@@ -42,9 +42,8 @@ function App() {
         </Route>
         <Route path="/promotion" element={<Promotion></Promotion>}>
         </Route>
-        <Route path="/brand" element={<Brand></Brand>}>
+        <Route path="/Wishlist" element={<Wishlist></Wishlist>}>
         </Route>
-
         <Route path="/confirmation" element={<Confirmation></Confirmation>}>
         </Route>
         <Route path="/login" element={<Login></Login>}>
@@ -61,7 +60,7 @@ function App() {
         </Route>
         <Route path="/adm/register" element={<CampgroundForm></CampgroundForm>}>
         </Route>
-        <Route path="*" element={<p style={{height:"100vh"}}><P404></P404></p>}>
+        <Route path="*" element={<P404></P404>}>
         </Route>
     </Routes>
     </Layout>

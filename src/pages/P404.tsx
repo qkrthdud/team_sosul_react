@@ -5,7 +5,7 @@ const NotFoundPage: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-center px-4">
+    <div className="flex flex-col items-center justify-center text-center px-4">
       {/* 404 이미지 */}
       <div
         className="w-full max-w-md h-80 bg-[url('/img/image/404.png')] bg-no-repeat bg-center bg-contain"

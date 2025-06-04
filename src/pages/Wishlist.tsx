@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Brand: React.FC = () => {
+const Wishlist: React.FC = () => {
     return (
         <div>
         </div>
     );
 };
 
-export default Brand;
+export default Wishlist;
