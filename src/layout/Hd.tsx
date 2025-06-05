@@ -9,6 +9,12 @@ interface HdProps {
  const Hd: React.FC<HdProps> = ({ isHome, isMember, setIsMember  })=> {
 
     const navigate = useNavigate();
+    const loginplz = () => {       
+           
+            alert("로그인이 필요합니다.");
+            navigate("/login");
+         
+        }   
  
     useEffect(() => {
         
@@ -50,15 +56,29 @@ interface HdProps {
 
             <ul className="util flex order-2  whitespace-nowrap items-center justify-end gap-lg-5 gap-2 font-point_txt organic w-0">
                 <li>
-                    <Link to="/confirmation" className=" whitespace-nowrap d-flex">
+                    {
+                        !isMember ? <Link to="/confirmation" className=" whitespace-nowrap d-flex"> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="//www.w3.org/2000/svg">
+                        <path d="M16.9529 4.69562H4V16H16.9529V4.69562Z" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M4 8.08698H16.9529" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M7.5314 3V5.82609" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M13.4199 3V5.82609" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M13.2458 10.5493L10.3019 13.3754L8.47086 11.806" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <span className="hidden lg:block mr-6">예약확인</span></Link> :(
+                    <button className="whitespace-nowrap d-flex" onClick={loginplz}>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="//www.w3.org/2000/svg">
-                            <path d="M16.9529 4.69562H4V16H16.9529V4.69562Z" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
-                            <path d="M4 8.08698H16.9529" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
-                            <path d="M7.5314 3V5.82609" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
-                            <path d="M13.4199 3V5.82609" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
-                            <path d="M13.2458 10.5493L10.3019 13.3754L8.47086 11.806" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
-                        </svg>
-                    <span className="hidden lg:block mr-6">예약확인</span></Link></li>
+                        <path d="M16.9529 4.69562H4V16H16.9529V4.69562Z" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M4 8.08698H16.9529" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M7.5314 3V5.82609" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M13.4199 3V5.82609" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M13.2458 10.5493L10.3019 13.3754L8.47086 11.806" stroke="#3F422F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg><span className="hidden lg:block mr-6">예약확인</span></button>
+                    )
+                    }
+                    
+                       
+                    </li>
+                    
                 <li>
                    
                     {
@@ -103,9 +123,10 @@ interface HdProps {
                     }
                     
                 </li>
-                <li>
+                { !isMember && <li>
                     <Link to="/adm/register">캠핑장 등록하기</Link>
-                </li>
+                </li> }
+                
             </ul>
         </div>
         {

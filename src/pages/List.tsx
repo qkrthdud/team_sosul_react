@@ -1,9 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Quickicon from '../components/Quickicon';
+import Productitme from '../ui/Productitme';
+import Filter from '../ui/Filter';
+
+import { fetchData } from '../lib/api';
+import { Campground } from '../types/common';
+
+
 
 import '../scss/list.hyuna.scss';
+import Pagenation from '../ui/Pagenation';
 
 const List: React.FC = () => {
+    const [campgrounds, setCampgrounds] = useState<Campground[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [currentPage, setCurrentPage] = useState<number>(1); // ✅ 현재 페이지
+    const itemsPerPage = 16; // ✅ 페이지당 항목 수
+ 
+    useEffect(() => {
+        const fetchCampgrounds = async () => {
+            setLoading(true); // ✅ 로딩 시작
+            try {
+                const offset = (currentPage - 1) * itemsPerPage;
+                const data = await fetchData('campgrounds', 'select', {
+                    limit: itemsPerPage,
+                    offset: offset,
+                });
+                if (data) {
+                    setCampgrounds([...data]);
+                    
+                }
+            } catch (err) {
+               console.log('캠핑장 정보를 불러오는 데 실패했습니다.');
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchCampgrounds();
+    },  [currentPage]);
+
     return (
         <div className="product_list">
             <div className="container">
@@ -56,6 +92,17 @@ const List: React.FC = () => {
                         </div>
                     </div>
                     <Quickicon></Quickicon>
+                    <Filter></Filter>
+                    <div className="sub_con_box flex flex-wrap ">
+                        {
+                            loading ? (<p>로딩중...</p>) : campgrounds && campgrounds.map((item) => (
+                                <Productitme key={item.id} fatchdata={item}></Productitme>
+                            ))
+                        }
+                        
+                    </div>
+                  <Pagenation currentPage={currentPage} setCurrentPage={setCurrentPage}></Pagenation>
+                    
 
                     
                 </div>

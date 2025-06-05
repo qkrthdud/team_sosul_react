@@ -11,7 +11,10 @@ type SelectOptions<T extends TableName> = {
   columns?: string;
   match?: Partial<Tables[T]["Row"]>;
   order?: { column: keyof Tables[T]["Row"]; ascending: boolean };
+  limit?: number;  // 최근게시물
+  offset?: number; // 페이지네이션
 };
+
 
 // 🔷 CRUD 공통 타입
 type FetchOptions<T extends TableName> =
@@ -37,7 +40,7 @@ export const fetchData = async <
       
       let query = supabase
         .from<T, Tables[T]["Row"]>(tableName)
-        .select(columns);
+        .select(columns, { count: 'exact' });
 
       if (selectOptions.match) {
         query = query.match(selectOptions.match);
@@ -47,6 +50,14 @@ export const fetchData = async <
         query = query.order(selectOptions.order.column as string, {
           ascending: selectOptions.order.ascending,
         });
+      }
+      if (selectOptions.limit !== undefined) {
+        query = query.limit(selectOptions.limit);
+      }
+    
+      
+      if (selectOptions.offset !== undefined) {
+        query = query.range(selectOptions.offset, selectOptions.offset + (selectOptions.limit ?? 0) - 1);
       }
 
       const response = await query;

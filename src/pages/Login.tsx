@@ -49,7 +49,7 @@ const Login: React.FC<LoginProps> = ({ setIsMember}) => {
        
         setUserid(data.userid);
         setIsMember(true);
-        alert(userid+"님 역시 캠핑예약은 소슬!");
+        alert( data.userid+"님 역시 캠핑예약은 소슬!");
         reset();
         window.location.href = "/";
 

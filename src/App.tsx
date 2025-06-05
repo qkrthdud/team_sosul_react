@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom'
 
+
 import './App.css'
 
 import Layout from './layout/Layout.tsx';
@@ -32,7 +33,6 @@ function App() {
 
 
 
-
   return (
    <Layout className='font-suit' isMember={isMember} setIsMember={setIsMember} > 
      <Routes>
@@ -55,14 +55,15 @@ function App() {
         </Route>
         <Route path="/pay" element={<Pay></Pay>}>
         </Route>
-        <Route path="/reservation" element={<Reservation></Reservation>}>
+        <Route path="/reservation/:id" element={<Reservation></Reservation>}>
         </Route>
-        <Route path="/view" element={<View></View>}>
+        <Route path="/product/view/:id" element={<View></View>}>
         </Route>
         <Route path="/adm/register" element={<CampgroundForm></CampgroundForm>}>
         </Route>
         <Route path="*" element={<P404></P404>}>
         </Route>
+        
      </Routes>
    </Layout>
   )
