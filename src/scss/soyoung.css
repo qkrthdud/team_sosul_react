@@ -750,3 +750,32 @@
   background-color: #332E2A;
   color: white;
 }
+.region-toggle-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 0; 
+}
+.toggle-region-btn {
+  margin-top: 0;
+  border: 1px solid #9A9A9A;
+  cursor: pointer;
+  border-radius: 20px;
+  display: flex;
+  height: 70px;
+  padding: 25px 20px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+
+.region {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.region div {
+  display: flex;
+  align-items: center;
+}

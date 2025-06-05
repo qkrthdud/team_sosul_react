@@ -7,7 +7,7 @@ import { fetchData } from "../lib/api"; // fetchData 함수 import
 
 
 const Member: React.FC = () => {
-  
+    const [showRegions, setShowRegions] = useState(false); 
     const [isRegistered, setIsRegistered] = useState<boolean>(false);
     const [username, setUsername] = useState<string>("");
 
@@ -173,6 +173,7 @@ const Member: React.FC = () => {
                         <input
                             type="radio"
                             id="male"
+                            style={{ display: "none" }}
                             {...register("gender", { required: "성별을 선택하세요." })}
                             value="male"
                         />
@@ -180,6 +181,7 @@ const Member: React.FC = () => {
                         <input
                             type="radio"
                             id="female"
+                            style={{ display: "none" }}
                             {...register("gender", { required: "성별을 선택하세요." })}
                             value="female"
                         />
@@ -187,22 +189,33 @@ const Member: React.FC = () => {
                     </div>
                     {errors.gender && <p className="error">{errors.gender.message}</p>}
 
-                    <label>선호 지역</label>
-                    <div className="region">
-                        {[
-                            "서울", "인천", "부산", "대구", "울산", "대전", "광주", "세종", 
-                            "강원", "경기", "충북", "충남", "경북", "경남", "전북", "전남", "제주"
-                        ].map((region) => (
-                            <div key={region}>
-                                <input
-                                    type="checkbox"
-                                    id={region}
-                                    value={region}
-                                    {...register("preferred_regions")}
-                                />
-                                <label htmlFor={region}>{region}</label>
+                    <div className="region-toggle-wrapper container">
+                        <button
+                            type="button"
+                            onClick={() => setShowRegions(!showRegions)}
+                            className="toggle-region-btn"
+                        >
+                            선호 지역
+                        </button>
+
+                        {showRegions && (
+                            <div className="region">
+                                {[
+                                    "서울", "인천", "부산", "대구", "울산", "대전", "광주", "세종", 
+                                    "강원", "경기", "충북", "충남", "경북", "경남", "전북", "전남", "제주"
+                                ].map((region) => (
+                                    <div key={region}>
+                                        <input
+                                            type="checkbox"
+                                            id={region}
+                                            value={region}
+                                            {...register("preferred_regions")}
+                                        />
+                                        <label htmlFor={region}>{region}</label>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
+                        )}
                     </div>
                     <div className="agreements">
                             {/* <input type="checkbox" id="agree-all" required /><label htmlFor="agree-all">약관 모두 동의</label>

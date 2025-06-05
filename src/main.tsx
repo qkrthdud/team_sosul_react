@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.tsx'
 import './index.css'
 
-import './scss/yena.min.css'
+import './scss/sosul.min.css'
 import './scss/soyoung.css'
 import './scss/hd.ej.scss'
 import './scss/quickicon.hyuna.scss'

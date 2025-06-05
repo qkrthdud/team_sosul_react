@@ -225,10 +225,9 @@
     position: absolute;
     display: inline-flex;
     justify-content: center;
-    left: 155px;
-    right: 0;
+    left: 70px;
     bottom: 1.875rem;
-    z-index: 1
+    z-index: 1;
 }
 
 .magazin .point_txt {
