@@ -49,7 +49,7 @@ function App() {
         </Route>
         <Route path="/confirmation" element={<Confirmation></Confirmation>}>
         </Route>
-        <Route path="/login" element={<Login isMember={isMember} setIsMember={setIsMember} ></Login>}>
+        <Route path="/login" element={<Login  setIsMember={setIsMember} ></Login>}>
         </Route>
         <Route path="/join" element={<Member></Member>}>
         </Route>
