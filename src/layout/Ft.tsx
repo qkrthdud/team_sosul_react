@@ -2,7 +2,7 @@
 
 const Ft:React.FC = () => {
     return (
-        <footer className="footer">
+        <footer className="footer bg-white">
         <div className="container">
             <p className="text-lg font-bold">고객센터 2025-1004</p>
             <p className="border-b text-gray-400 border-gray-300 text-sm pb-4">운영시간 : 평일 09:00 ~ 18:00 (점심시간 12:00 ~ 13:00 제외)</p>

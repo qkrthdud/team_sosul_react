@@ -1643,6 +1643,57 @@
     animation: beating .5s 1 alternate
 }
 
+.h.swiper-container .h_swiper-page {
+    position: absolute;
+    width: 142px;
+    height: 50px;
+    display: flex;
+    background-color: #fff;
+    bottom: 0;
+    right: 0;
+    align-items: center;
+    gap: 20px;
+    z-index: 100;
+    padding: 10px 10px 10px 20px;
+    border-top-left-radius: 10px
+}
+
+@media(max-width: 991px) {
+    .h.swiper-container .h_swiper-page {
+        width:66px;
+        height: 30px;
+        padding: 10px 10px 10px 10px
+    }
+}
+
+.h.swiper-container .h_swiper-page .swiper-pagination span:nth-child(1) {
+    font-weight: 900
+}
+
+.h.swiper-container .h_swiper-page .h_swiper-button {
+    display: flex;
+    gap: 5px
+}
+
+@media(max-width: 991px) {
+    .h.swiper-container .h_swiper-page .h_swiper-button {
+        display:none
+    }
+}
+
+.h.swiper-container .h_swiper-page .h_swiper-button .swiper-button-next,.h.swiper-container .h_swiper-page .h_swiper-button .swiper-button-prev {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    color: var(--main_color, rgb(63, 66, 47))
+}
+
+.h.swiper-container .h_swiper-page .h_swiper-button .swiper-button-next::after,.h.swiper-container .h_swiper-page .h_swiper-button .swiper-button-prev::after {
+    font-size: 16px;
+    font-weight: 900
+}
+
 @keyframes beating {
     0% {
         transform: scale(1)
