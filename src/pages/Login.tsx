@@ -13,12 +13,12 @@ type MembersLogin = {
 };
 
 type LoginProps = {
-    isMember: boolean;  
+    
     setIsMember: React.Dispatch<React.SetStateAction<boolean>>; // isMember 상태를 업데이트하는 함수
 };
   
 
-const Login: React.FC<LoginProps> = ({isMember, setIsMember}) => {
+const Login: React.FC<LoginProps> = ({ setIsMember}) => {
    
   const [userid, setUserid] = useState<string>("");
 
@@ -49,7 +49,7 @@ const Login: React.FC<LoginProps> = ({isMember, setIsMember}) => {
        
         setUserid(data.userid);
         setIsMember(true);
-        alert(userid+"로그인 성공");
+        alert(userid+"님 역시 캠핑예약은 소슬!");
         reset();
         window.location.href = "/";
 
