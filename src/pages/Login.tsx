@@ -34,7 +34,7 @@ const Login: React.FC<LoginProps> = ({ setIsMember}) => {
   const onSubmit = async (data: MembersLogin) => {
     console.log("입력한 로그인 정보:", data); // ✅ 콘솔 출력 1 맞아
     try {
-      const result = await fetchData("members", "select", {
+      const { data: result } = await fetchData("members", "select", {
         match: {
           userid: data.userid,
           password: data.password,
