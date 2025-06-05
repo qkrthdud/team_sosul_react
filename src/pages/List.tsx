@@ -16,29 +16,36 @@ const List: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const [currentPage, setCurrentPage] = useState<number>(1); // ✅ 현재 페이지
     const itemsPerPage = 16; // ✅ 페이지당 항목 수
+    const [totalItems, setTotalItems] = useState<number>(0); // ✅ 총 캠핑장 수
  
     useEffect(() => {
         const fetchCampgrounds = async () => {
             setLoading(true); // ✅ 로딩 시작
             try {
                 const offset = (currentPage - 1) * itemsPerPage;
-                const data = await fetchData('campgrounds', 'select', {
+    
+                const { data, count } = await fetchData('campgrounds', 'select', {
                     limit: itemsPerPage,
                     offset: offset,
                 });
+    
                 if (data) {
                     setCampgrounds([...data]);
-                    
+                }
+    
+                if (count !== null) {
+                    setTotalItems(count); // ✅ 총 개수를 상태에 반영 (이거 있어야 페이지네이션 총 페이지 계산 가능)
                 }
             } catch (err) {
-               console.log('캠핑장 정보를 불러오는 데 실패했습니다.');
+                console.log('캠핑장 정보를 불러오는 데 실패했습니다.');
             } finally {
                 setLoading(false);
             }
         };
-
+    
         fetchCampgrounds();
-    },  [currentPage]);
+    }, [currentPage]);
+    
 
     return (
         <div className="product_list">
@@ -101,7 +108,12 @@ const List: React.FC = () => {
                         }
                         
                     </div>
-                  <Pagenation currentPage={currentPage} setCurrentPage={setCurrentPage}></Pagenation>
+                    <Pagenation
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage}
+                    totalItems={totalItems} // ✅ 추가
+                    itemsPerPage={itemsPerPage} // ✅ 추가
+                    />
                     
 
                     

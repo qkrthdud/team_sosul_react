@@ -1,11 +1,18 @@
 interface Props {
     currentPage: number;
     setCurrentPage: (page: number) => void;
-}
+    totalItems: number;
+    itemsPerPage: number;
+  }
 
-const Pagenation: React.FC<Props> = ({ currentPage, setCurrentPage }) => {
-    const totalPages = 10; // 예시로 총 10페이지 가정
-
+  const Pagenation: React.FC<Props> = ({ currentPage, setCurrentPage, totalItems, itemsPerPage }) => {
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+  
+    const handleClick = (page: number) => {
+      if (page >= 1 && page <= totalPages) {
+        setCurrentPage(page);
+      }
+    };
     return (
         <div className="paging flex">
             <div className="prev">
@@ -28,19 +35,15 @@ const Pagenation: React.FC<Props> = ({ currentPage, setCurrentPage }) => {
             </div>
            
             <div className="number flex">
-            {[...Array(totalPages)].map((_, idx) => {
-                const page = idx + 1;
-                return (
-                    <button
-                        key={page}
-                        onClick={() => setCurrentPage(page)}
-                        className={page === currentPage ? 'active num' : 'num'}
-                    >
-                        {page}
-                    </button>
-                );
-            })}
-               
+            {Array.from({ length: totalPages }, (_, i) => (
+                <button
+                key={i + 1}
+                onClick={() => handleClick(i + 1)}
+                className={currentPage === i + 1 ?  'active num' : 'num'}
+                >
+                {i + 1}
+                </button>
+            ))}
             </div>
             <div className="next">
                 <a href="">
