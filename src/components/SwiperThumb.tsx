@@ -5,7 +5,7 @@ import { useRef } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Title from "./Title";
+import Title from "../ui/Title";
 
 function SwiperThumb() {
   const { main_con_four } = fourswiper;

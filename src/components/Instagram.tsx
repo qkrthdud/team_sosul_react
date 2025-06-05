@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation"; // 이 CSS는 커스텀 버튼에도 영향을 줄 수 있으므로, 필요 없다면 제거 가능
 import "swiper/css/pagination";
 import '../scss/soyoung.scss';
-import Title from "./Title";
+import Title from "../ui/Title";
 
 // InstagramEmbed 컴포넌트 및 관련 타입 정의 (이전과 동일)
 declare global {

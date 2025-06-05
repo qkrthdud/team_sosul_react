@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom'
 
 import './App.css'
@@ -35,7 +35,7 @@ function App() {
 
   return (
    <Layout className='font-suit' isMember={isMember} setIsMember={setIsMember} > 
-    <Routes>
+     <Routes>
         <Route path="/" element={<Indexroute></Indexroute>}>
         </Route>
        
@@ -63,8 +63,8 @@ function App() {
         </Route>
         <Route path="*" element={<P404></P404>}>
         </Route>
-    </Routes>
-    </Layout>
+     </Routes>
+   </Layout>
   )
 }
 

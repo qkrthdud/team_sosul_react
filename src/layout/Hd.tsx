@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate  } from 'react-router-dom'
 import { useEffect } from 'react';
 
 interface HdProps {
@@ -8,7 +8,7 @@ interface HdProps {
   }
  const Hd: React.FC<HdProps> = ({ isHome, isMember, setIsMember  })=> {
 
-
+    const navigate = useNavigate();
  
     useEffect(() => {
         
@@ -25,6 +25,9 @@ interface HdProps {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+    useEffect(() => {
+        console.log(isMember)
+    },[isMember])
     return (
         <header id="hd" className="  fixed top-0 left-0 right-0 w-full z-50  bg-sub_apricot bg-white ">
         <div className="max-w container_full flex justify-between items-center ej_innertop">
@@ -57,6 +60,7 @@ interface HdProps {
                         </svg>
                     <span className="hidden lg:block mr-6">예약확인</span></Link></li>
                 <li>
+                   
                     {
                         isMember ? <Link to="/login" className=" whitespace-nowrap d-flex">
                         <svg xmlns="//www.w3.org/2000/svg" width="21" height="12" viewBox="0 0 21 12" fill="none">
@@ -70,8 +74,21 @@ interface HdProps {
                         </svg>
                         <span className="hidden lg:block">로그인</span>
                     </Link> 
-                     : <Link to="/" className=" whitespace-nowrap d-flex">
-                     <svg xmlns="//www.w3.org/2000/svg" width="21" height="12" viewBox="0 0 21 12" fill="none">
+                    
+                     : 
+                     
+                     <button
+                        className=" whitespace-nowrap d-flex"
+                        onClick={() => {
+                           
+                          
+                                alert("로그아웃 되었습니다.");
+                                navigate("/");
+                                setIsMember(true); 
+                           
+                        }}
+                        >
+                      <svg xmlns="//www.w3.org/2000/svg" width="21" height="12" viewBox="0 0 21 12" fill="none">
                          <path d="M19.5 11V6" stroke="#3F422F" stroke-width="1.2" stroke-linejoin="round"></path>
                          <path d="M7.23251 10.9999H10.047L5.77351 1L1.5 10.9999H4.31452L5.77351 7.5861L7.23251 10.9999Z" stroke="#3F422F" stroke-width="1.2" stroke-linejoin="round"></path>
                          <path d="M4.31592 11H7.23391" stroke="#3F422F" stroke-width="1.2" stroke-linejoin="round"></path>
@@ -81,7 +98,8 @@ interface HdProps {
                          <path d="M10.046 11V6" stroke="#3F422F" stroke-width="1.2" stroke-linejoin="round"></path>
                      </svg>
                      <span className="hidden lg:block">로그아웃</span>
-                 </Link> 
+                    </button>
+                    
                     }
                     
                 </li>

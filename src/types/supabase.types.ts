@@ -228,7 +228,29 @@ export type Database = {
 
           }
         }
-        
+        notices:{
+          Row:{
+            id: number;
+            title: string;
+            content: string;
+            link: string;
+            created_at: string; // ISO 형식의 날짜 문자열
+          }
+          Insert:{
+            id?: number;
+            title: string;
+            content: string;
+            link: string;
+            created_at?: string; // ISO 형식의 날짜 문자열
+          }
+          Update:{
+            id: number;
+            title: string;
+            content: string;
+            link: string;
+            created_at?: string; // ISO 형식의 날짜 문자열
+          }         
+        }
     };
   };
 }

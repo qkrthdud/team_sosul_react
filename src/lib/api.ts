@@ -31,11 +31,13 @@ export const fetchData = async <
 ): Promise<Tables[T]["Row"][] | null> => {
   try {
     if (operation === "select") {
-      const selectOptions = options as SelectOptions<T>;
 
+      const selectOptions = (options ?? {}) as SelectOptions<T>;     
+      const columns = selectOptions.columns ?? "*";
+      
       let query = supabase
         .from<T, Tables[T]["Row"]>(tableName)
-        .select(selectOptions.columns || "*");
+        .select(columns);
 
       if (selectOptions.match) {
         query = query.match(selectOptions.match);

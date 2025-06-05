@@ -1,14 +1,15 @@
 import Videocontainer from '../components/Videocontainer.tsx';
 import Quickicon from '../components/Quickicon.tsx';
 import SwiperThumb from '../components/SwiperThumb.tsx';
-import Banner from '../components/Banner.tsx';
+import Banner from '../ui/Banner.tsx';
 import Instagram from '../components/Instagram.tsx';
-import Morebox from '../components/Morebox.tsx';
-import Title from '../components/Title.tsx';
+import Morebox from '../ui/Morebox.tsx';
+import Title from '../ui/Title.tsx';
 
 
 import Magazin from '../components/Magazin.tsx';
 import Hotspot from '../components/Hotspot.tsx';
+import NoticeSwiper from '../components/NoticeSwiper.tsx';
 
 function Indexroute() {
 
@@ -79,6 +80,7 @@ function Indexroute() {
                         </div>
                     </div>
                 </div>
+            <NoticeSwiper></NoticeSwiper>
         </div>
     )
 }
