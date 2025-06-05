@@ -15,7 +15,7 @@ function NoticeSwiper() {
   useEffect(() => {
     const fetchNotices = async () => {
       try {
-        const data = await fetchData("notices", "select"); // ✅ 올바른 제네릭과 테이블명
+        const { data } = await fetchData("notices", "select"); // ✅ 올바른 제네릭과 테이블명
         if (data) {
           setNoticeList([...data]);
         }
