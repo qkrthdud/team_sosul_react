@@ -20,7 +20,7 @@ type LoginProps = {
 
 const Login: React.FC<LoginProps> = ({ setIsMember}) => {
    
-  const [userid, setUserid] = useState<string>("");
+
 
 
 
@@ -47,7 +47,7 @@ const Login: React.FC<LoginProps> = ({ setIsMember}) => {
         console.log("🔐 인증된 사용자:", result[0]); // ✅ 일치한 사용자 정보 이것도 맞아
 
        
-        setUserid(data.userid);
+       
         setIsMember(true);
         alert( data.userid+"님 역시 캠핑예약은 소슬!");
         reset();
