@@ -41,7 +41,7 @@ const HotspotSection: React.FC = () => {
 
     const fetchHot = async () => {
         try {
-          const data = await fetchData("campaign_features", "select", {
+          const {data} = await fetchData("campaign_features", "select", {
             order: { column: "id", ascending: true },
           });
           setHotspot((data as Campaign_features[]) || []);
