@@ -16,7 +16,7 @@
 
 ## 2. 개발환경
 - 개발언어: JavaScript (React 기반), TypeScript
-- 빌드도구: CRA
+- 빌드도구: vite
 - 배포환경: Vercel
 - DB: Supabase (PostgreSQL)
 - 협업도구: GitHub, Slack, Figma
