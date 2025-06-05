@@ -11,10 +11,9 @@ type SelectOptions<T extends TableName> = {
   columns?: string;
   match?: Partial<Tables[T]["Row"]>;
   order?: { column: keyof Tables[T]["Row"]; ascending: boolean };
-  limit?: number;  // 최근게시물
-  offset?: number; // 페이지네이션
+  limit?: number;
+  offset?: number;
 };
-
 
 // 🔷 CRUD 공통 타입
 type FetchOptions<T extends TableName> =
@@ -22,6 +21,12 @@ type FetchOptions<T extends TableName> =
   | { data: Tables[T]["Insert"] } // insert
   | { data: Partial<Tables[T]["Update"]>; match: Partial<Tables[T]["Row"]> } // update
   | { match: Partial<Tables[T]["Row"]> }; // delete
+
+// 🔷 반환 타입
+type FetchReturn<T extends TableName, O extends Operation> =
+  O extends "select"
+    ? { data: Tables[T]["Row"][]; count: number | null }
+    : Tables[T]["Row"][] | null;
 
 // 🔷 fetchData 함수
 export const fetchData = async <
@@ -31,16 +36,15 @@ export const fetchData = async <
   tableName: T,
   operation: O,
   options?: FetchOptions<T>
-): Promise<Tables[T]["Row"][] | null> => {
+): Promise<FetchReturn<T, O>> => {
   try {
     if (operation === "select") {
-
-      const selectOptions = (options ?? {}) as SelectOptions<T>;     
+      const selectOptions = (options ?? {}) as SelectOptions<T>;
       const columns = selectOptions.columns ?? "*";
-      
+
       let query = supabase
         .from<T, Tables[T]["Row"]>(tableName)
-        .select(columns, { count: 'exact' });
+        .select(columns, { count: "exact" });
 
       if (selectOptions.match) {
         query = query.match(selectOptions.match);
@@ -51,27 +55,29 @@ export const fetchData = async <
           ascending: selectOptions.order.ascending,
         });
       }
+
       if (selectOptions.limit !== undefined) {
         query = query.limit(selectOptions.limit);
       }
-    
-      
+
       if (selectOptions.offset !== undefined) {
-        query = query.range(selectOptions.offset, selectOptions.offset + (selectOptions.limit ?? 0) - 1);
+        query = query.range(
+          selectOptions.offset,
+          selectOptions.offset + (selectOptions.limit ?? 0) - 1
+        );
       }
 
       const response = await query;
 
-        const { data, error } = response as {
-          data: Tables[T]["Row"][] | null;
-          error: Error | null;
-        };
-      
-        if (error) {
-          throw error;
-        }
-      
-        return data;
+      const { data, count, error } = response as {
+        data: Tables[T]["Row"][] | null;
+        count: number | null;
+        error: Error | null;
+      };
+
+      if (error) throw error;
+
+      return { data: data ?? [], count } as FetchReturn<T, O>;
     }
 
     if (operation === "insert") {
@@ -80,7 +86,7 @@ export const fetchData = async <
         .from(tableName)
         .insert(insertOptions.data);
       if (error) throw error;
-      return data;
+      return data as FetchReturn<T, O>;
     }
 
     if (operation === "update") {
@@ -93,7 +99,7 @@ export const fetchData = async <
         .update(updateOptions.data)
         .match(updateOptions.match);
       if (error) throw error;
-      return data;
+      return data as FetchReturn<T, O>;
     }
 
     if (operation === "delete") {
@@ -105,7 +111,7 @@ export const fetchData = async <
         .delete()
         .match(deleteOptions.match);
       if (error) throw error;
-      return data;
+      return data as FetchReturn<T, O>;
     }
 
     throw new Error("Invalid operation");
@@ -114,32 +120,3 @@ export const fetchData = async <
     throw error;
   }
 };
-
-const BUCKET_NAME = "upload";
-
-export const uploadFile = async (
-  file: File,
-  folder: string = "campground-photos"
-): Promise<string> => {
-  try {
-    const fileExt = file.name.split(".").pop();
-    const fileName = `${Date.now()}.${fileExt}`;
-    const filePath = `${folder}/${fileName}`;
-
-    const { error: uploadError } = await supabase.storage
-      .from(BUCKET_NAME)
-      .upload(filePath, file);
-
-    if (uploadError) throw uploadError;
-
-    const { data } = supabase.storage
-      .from(BUCKET_NAME)
-      .getPublicUrl(filePath);
-
-    return data.publicUrl;
-  } catch (error) {
-    console.error("파일 업로드 실패:", error);
-    throw error;
-  }
-};
-
