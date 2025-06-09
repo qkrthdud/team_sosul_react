@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
 import { Campground } from "../types/common";
 
 interface ProductItemProps {
@@ -8,6 +8,11 @@ interface ProductItemProps {
 }
 
 const Productitme: React.FC<ProductItemProps> = ({ fatchdata }) => {
+    const [liked, setLiked] = useState<boolean>(false);
+
+    const handleLikeClick = () => {
+        setLiked((prev: boolean) => !prev);
+    };
     return (
         <div className="con_box">
             <Link to={`/product/view/${fatchdata.id}`} className="con_img_box">
@@ -17,7 +22,7 @@ const Productitme: React.FC<ProductItemProps> = ({ fatchdata }) => {
                     className="con_img"
                 />
             </Link>
-            <button className="btn_like"></button>
+            <button className={`btn_like ${liked ? "on" : ""}`}onClick={handleLikeClick}></button>
             <div className="con_txt">
                 <div className="location point_txt gray3">지역</div>
                 <Link to={`/product/view/${fatchdata.id}`} className="camping basic_txt">
