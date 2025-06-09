@@ -10,6 +10,7 @@ import { Campground } from '../types/common';
 
 import '../scss/list.hyuna.scss';
 import Pagenation from '../ui/Pagenation';
+import { useParams } from 'react-router-dom';
 
 const List: React.FC = () => {
     const [campgrounds, setCampgrounds] = useState<Campground[]>([]);
@@ -17,6 +18,7 @@ const List: React.FC = () => {
     const [currentPage, setCurrentPage] = useState<number>(1); // ✅ 현재 페이지
     const itemsPerPage = 16; // ✅ 페이지당 항목 수
     const [totalItems, setTotalItems] = useState<number>(0); // ✅ 총 캠핑장 수
+    const { name } = useParams<{ name?: string }>();
  
     useEffect(() => {
         const fetchCampgrounds = async () => {
@@ -98,7 +100,7 @@ const List: React.FC = () => {
                             </a>
                         </div>
                     </div>
-                    <Quickicon></Quickicon>
+                    <Quickicon activetab={name} ></Quickicon>
                     <Filter></Filter>
                     <div className="sub_con_box flex flex-wrap ">
                         {
