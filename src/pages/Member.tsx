@@ -169,54 +169,57 @@ const Member: React.FC = () => {
                     </div>
 
                     <label>성별</label>
-                    <div className="gender">
+                        <div className="gender">
                         <input
                             type="radio"
                             id="male"
-                            style={{ display: "none" }}
-                            {...register("gender", { required: "성별을 선택하세요." })}
                             value="male"
+                            {...register("gender", { required: "성별을 선택하세요." })}
+                            style={{ display: "none" }}
                         />
                         <label htmlFor="male" className="gender-label">남성</label>
+
                         <input
                             type="radio"
                             id="female"
-                            style={{ display: "none" }}
-                            {...register("gender", { required: "성별을 선택하세요." })}
                             value="female"
+                            {...register("gender", { required: "성별을 선택하세요." })}
+                            style={{ display: "none" }}
                         />
                         <label htmlFor="female" className="gender-label">여성</label>
-                    </div>
+                        </div>
+
                     {errors.gender && <p className="error">{errors.gender.message}</p>}
 
                     <div className="region-toggle-wrapper container">
                         <button
                             type="button"
                             onClick={() => setShowRegions(!showRegions)}
-                            className="toggle-region-btn"
+                            className={`toggle-region-btn ${showRegions ? "open" : ""}`}
                         >
                             선호 지역
+                            <span className="dropdown-icon">▼</span>
                         </button>
 
                         {showRegions && (
                             <div className="region">
-                                {[
-                                    "서울", "인천", "부산", "대구", "울산", "대전", "광주", "세종", 
-                                    "강원", "경기", "충북", "충남", "경북", "경남", "전북", "전남", "제주"
-                                ].map((region) => (
-                                    <div key={region}>
-                                        <input
-                                            type="checkbox"
-                                            id={region}
-                                            value={region}
-                                            {...register("preferred_regions")}
-                                        />
-                                        <label htmlFor={region}>{region}</label>
-                                    </div>
-                                ))}
+                            {[
+                                "서울", "인천", "부산", "대구", "울산", "대전", "광주", "세종", 
+                                "강원", "경기", "충북", "충남", "경북", "경남", "전북", "전남", "제주"
+                            ].map((region) => (
+                                <div key={region}>
+                                <input
+                                    type="checkbox"
+                                    id={region}
+                                    value={region}
+                                    {...register("preferred_regions")}
+                                />
+                                <label htmlFor={region}>{region}</label>
+                                </div>
+                            ))}
                             </div>
                         )}
-                    </div>
+                        </div>
                     <div className="agreements">
                             {/* <input type="checkbox" id="agree-all" required /><label htmlFor="agree-all">약관 모두 동의</label>
                             <input type="checkbox" id="age-confirm" required /><label htmlFor="age-confirm">만 14세 이상입니다.<span className="required">(필수)</span></label>
