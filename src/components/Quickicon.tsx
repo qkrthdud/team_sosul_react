@@ -2,12 +2,21 @@ import React, {useEffect, useState} from 'react';
 import { supabase } from '../lib/supabaseClient';
 import type { Category } from '../types/common';
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../scss/quickicon.hyuna.scss';
 
-const Quickicon:React.FC = () => {
+interface QuickiconProps {
+    activetab?: string;
+  }
+  
+const Quickicon: React.FC<QuickiconProps> = ({ activetab }) => {
     const [categories, setCategories] = useState<Category[]>([]);
     const [loding, setLoding] = useState<boolean>(true);
+    const location = useLocation();
+
+    useEffect(() => {
+        console.log('location.pathname 변경됨 →', location.pathname);
+    }, [location.pathname]);
  
 
     useEffect(() => {
@@ -41,8 +50,8 @@ const Quickicon:React.FC = () => {
                     <li className="loading">Loading...</li>
                 ) : (
                     categories.map((category) => (
-                        <li key={category.id} id={`category_${category.id}`}>
-                            <Link to={`/product/list/${category.route}`} >
+                        <li key={category.id} id={`category_${category.id}`} >
+                            <Link to={`/product/list/${category.route}`} className={activetab === category.route ? 'active' : ''} >
                                 {category.icon_svg ? (
                                     <span dangerouslySetInnerHTML={{ __html: category.icon_svg }} />
                                 ) : (

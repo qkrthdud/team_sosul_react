@@ -47,17 +47,22 @@
             // background-color: var(--sub_apricot);
             // color: #fff;
         }
-        a:hover svg{
+        a:hover svg,
+        .active svg{
             // color: var(--sub_apricot);
             background-color: var(--sub_apricot);
             color: #fff;
         }
-        a:hover span:nth-child(2) {
+        a:hover span:nth-child(2),
+        .active span:nth-child(2) {
             color: #000;
         }
         a:hover svg > path,
         a:hover svg > circle,
-        a:hover svg > ellipse {
+        a:hover svg > ellipse,
+        .active svg > path,
+        .active svg > circle,
+        .active svg > ellipse {
             // stroke: var(--sub_apricot);
             stroke: #fff;
         }
