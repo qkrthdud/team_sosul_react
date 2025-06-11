@@ -815,3 +815,39 @@ input[type="radio"]:checked + .gender-label {
   flex-wrap: wrap;
   gap: 8px;
 }
+
+.con_box {
+  position: relative;
+  .btn_like {
+      width: 40px; 
+      height: 40px;
+      position: absolute;
+      top:10px;
+      right:10px;
+      @media (max-width:991px) {
+          top:5px;
+          right:5px;
+      }
+  }
+}
+
+.btn_like {
+  width: 34px; 
+  height: 34px;
+  background: url("//item-team-sosul.vercel.app/img/icon/like_basic.svg") no-repeat center;
+  background-size: contain; 
+  cursor: pointer; 
+  border:0;
+  display:block;
+  &.on {
+      background: url("//item-team-sosul.vercel.app/img/icon/like_hover.svg") no-repeat center ; 
+      background-size: contain;
+      animation: beating .5s 1 alternate;
+  }
+  @keyframes beating {
+      0% {transform: scale(1);}
+      40% {transform: scale(1.25);}
+      70% {transform: scale(0.9);}
+      100% {transform: scale(1);}
+  }
+}
