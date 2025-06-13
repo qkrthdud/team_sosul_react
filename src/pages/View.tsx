@@ -23,15 +23,15 @@ const View: React.FC = () => {
     const navigate = useNavigate();
 
     // 상품 ID (예시)
-    const productId = '123';
+    // const productId = '123';
 
     // 2. 예약하기 버튼 클릭 시 페이지 이동을 처리하는 함수
-    const handleReservationClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        // a 태그의 기본 링크 이동 동작을 막습니다.
-        e.preventDefault();
-        // 지정된 경로로 이동합니다.
-        navigate(`/reservation/${productId}`);
-    };
+    // const handleReservationClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    //     // a 태그의 기본 링크 이동 동작을 막습니다.
+    //     e.preventDefault();
+    //     // 지정된 경로로 이동합니다.
+    //     navigate(`/reservation/${productId}`);
+    // };
 
     return (
         <div className="ej_content mt-[-30px]" >
@@ -79,7 +79,7 @@ const View: React.FC = () => {
                             <div className="h_view_top_title">
                                 <div>
                                     <h3 className="sub_tit">여주 블루마린캠핑장</h3>
-                                    <p><img src="//item-team-sosul.vercel.app/img/icon/detail_place.svg" alt="위치" />경기도 여주시 능서면 중부대로 2545-74</p>
+                                    <p className="flex gap-[5px] text-gray_3"><img src="//item-team-sosul.vercel.app/img/icon/detail_place.svg" alt="위치" />경기도 여주시 능서면 중부대로 2545-74</p>
                                 </div>
                                 <div className="h_view_top_title_iconbox">
                                     <a href="tel:01012341234"><img src="//item-team-sosul.vercel.app/img/icon/detail_call.svg" alt="전화하기" /></a>
@@ -87,13 +87,13 @@ const View: React.FC = () => {
                                     <a href=""><img src="//item-team-sosul.vercel.app/img/icon/detail_share.svg" alt="공유하기" /></a>
                                 </div>
                             </div>
-                            <nav className="h_view_top_tab">
-                                <a href="" className="tab">시설소개</a>
-                                <a href="" className="tab">운영정책</a>
-                                <a href="" className="tab">시설/환경</a>
-                                <a href="" className="tab">배치도</a>
-                                <a href="" className="tab">예약안내</a>
-                                <a href="" className="tab">방문후기</a>
+                            <nav className="h_view_top_tab flex gap-[10px]">
+                                <a href="" className="tab px-[20px] py-[5px] border border-black rounded-[50px] rounded-lg hover:bg-main hover:text-white">시설소개</a>
+                                <a href="" className="tab px-[20px] py-[5px] border border-black rounded-[50px] rounded-lg hover:bg-main hover:text-white">운영정책</a>
+                                <a href="" className="tab px-[20px] py-[5px] border border-black rounded-[50px] rounded-lg hover:bg-main hover:text-white">시설/환경</a>
+                                <a href="" className="tab px-[20px] py-[5px] border border-black rounded-[50px] rounded-lg hover:bg-main hover:text-white">배치도</a>
+                                <a href="" className="tab px-[20px] py-[5px] border border-black rounded-[50px] rounded-lg hover:bg-main hover:text-white">예약안내</a>
+                                <a href="" className="tab px-[20px] py-[5px] border border-black rounded-[50px] rounded-lg hover:bg-main hover:text-white">방문후기</a>
                             </nav>
 
                             <div className="h_vinfo_wrap">
@@ -226,18 +226,18 @@ const View: React.FC = () => {
 
                                 {/* <!-- 캘린더이미지 --> */}
                                 <div className="re_container_sy">
-                                    캘린더 이미지
+                                    <img src="/img/image/pc_date.jpg" alt="" />
                                 </div>
                                 {/* <!-- 일정/인원 선택 --> */}
-                                <div className="syre_container">
-                                    <div className="checkinout_sy">
+                                <div className="syre_container flex justify-between">
+                                    <div className="flex gap-[20px]">
                                         <label htmlFor="checkin_sy">입실</label>
-                                        <input type="date" id="checkin" defaultValue="2025-12-19" />
+                                        <input type="date" id="checkin" defaultValue="2025-12-19" className="bg-transparent" />
                                         <span>~</span>
                                         <label htmlFor="checkout_sy">퇴실</label>
-                                        <input type="date" id="checkout_sy" defaultValue="2025-12-21" />
+                                        <input type="date" id="checkout_sy" defaultValue="2025-12-21" className="bg-transparent" />
                                     </div>
-                                    <div className="clock">
+                                    <div className="clock flex">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" viewBox="0 0 26 27" fill="none">
                                             <g id="Group">
                                                 <path id="Vector" d="M13.0001 22.3494C17.6458 22.3494 21.4119 18.5833 21.4119 13.9376C21.4119 9.29195 17.6458 5.52588 13.0001 5.52588C8.35445 5.52588 4.58838 9.29195 4.58838 13.9376C4.58838 18.5833 8.35445 22.3494 13.0001 22.3494Z" stroke="#3F422F" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"></path>
@@ -256,9 +256,9 @@ const View: React.FC = () => {
                                     <div className="roomsel_sy2">
                                         <img src="//item-team-sosul.vercel.app/img/image/image 19.png" className="sy-image" alt="" />
                                         <div className="sy_imgtext">
-                                            <span className="sy_roomsel_sy2toptext basic_txt block">카라반 1호</span>
-                                            <span className='block'>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" viewBox="0 0 26 27" fill="none">
+                                            <span className="sy_roomsel_sy2toptext basic_txt flex">카라반 1호</span><br/>
+                                            <span className="flex gap-[5px] items-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 27" fill="none">
                                                     <g id="Group">
                                                         <path id="Vector" d="M13.0001 22.3494C17.6458 22.3494 21.4119 18.5833 21.4119 13.9376C21.4119 9.29195 17.6458 5.52588 13.0001 5.52588C8.35445 5.52588 4.58838 9.29195 4.58838 13.9376C4.58838 18.5833 8.35445 22.3494 13.0001 22.3494Z" stroke="#3F422F" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"></path>
                                                         <path id="Vector_2" d="M13 8.37598V13.9379" stroke="#3F422F" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"></path>
@@ -266,16 +266,16 @@ const View: React.FC = () => {
                                                     </g>
                                                 </svg>
                                                 입실 14시, 퇴실 12시
-                                            </span>
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            </span><br/>
+                                            <span className="flex gap-[5px] ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="18" viewBox="0 0 18 18" fill="none">
                                                     <g id="message">
                                                         <path id="Vector" d="M15.4707 1.29053H2.5295C2.21748 1.29053 1.91824 1.41448 1.69761 1.63511C1.47698 1.85574 1.35303 2.15498 1.35303 2.467V12.467C1.35303 12.779 1.47698 13.0783 1.69761 13.2989C1.91824 13.5195 2.21748 13.6435 2.5295 13.6435H4.88244V16.5846L8.55303 13.6435H15.4707C15.7827 13.6435 16.0819 13.5195 16.3026 13.2989C16.5232 13.0783 16.6471 12.779 16.6471 12.467V2.467C16.6471 2.15498 16.5232 1.85574 16.3026 1.63511C16.0819 1.41448 15.7827 1.29053 15.4707 1.29053Z" stroke="#3F422F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
                                                     </g>
                                                 </svg>
                                                 침구류,식기류, tv, 냉장고, 전자렌지, 밥솥, 세면도구 구비되어있음. <br />
                                                 *(단 세면도구, 타올은 챙겨오세요)</span> <br />
-                                            <span><svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" viewBox="0 0 26 27" fill="none">
+                                            <span className="flex gap-[5px] items-center"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" viewBox="0 0 26 27" fill="none">
                                                 <g id="login">
                                                     <path id="Vector" d="M9.84473 18.0923V22.8158" stroke="#3F422F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
                                                     <path id="Vector_2" d="M17.9539 13.4475C17.6747 13.3491 17.3754 13.29 17.0662 13.29H9.4657C8.03936 13.29 6.88232 14.4316 6.88232 15.8388V22.8946H19.6496V15.8388C19.6496 14.7465 18.9414 13.8116 17.9539 13.4475Z" stroke="#3F422F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
@@ -283,7 +283,7 @@ const View: React.FC = () => {
                                                     <path id="Vector_4" d="M16.2581 8.47809C16.2581 10.1117 14.9215 11.4303 13.2658 11.4303C11.62 11.4303 10.2734 10.1117 10.2734 8.47809C10.2734 6.84454 11.61 5.52588 13.2658 5.52588C14.9115 5.52588 16.2581 6.84454 16.2581 8.47809Z" stroke="#3F422F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
                                                 </g>
                                             </svg> 성인 2명, 미성년2인</span><br />
-                                            <span> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <span className="flex gap-[5px] items-center"> <svg xmlns="http://www.w3.org/2000/svg" width="26" height="18" viewBox="0 0 18 18" fill="none">
                                                 <g id="car">
                                                     <path id="Vector" d="M8.8833 12.9521V16.5572" stroke="#3F422F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
                                                     <path id="Vector_2" d="M11.2866 0.935547L1.07227 16.5574H16.6941L6.47983 0.935547" stroke="#3F422F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
@@ -303,21 +303,21 @@ const View: React.FC = () => {
                                     <div className="roomsel_sy2">
                                         <img src="//item-team-sosul.vercel.app/img/image/image 19.png" className="sy-image" alt="" />
                                         <div className="sy_imgtext">
-                                            <span className="sy_roomsel_sy2toptext basic_txt">카라반 2호</span><br />
-                                            <span><svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" viewBox="0 0 26 27" fill="none">
+                                            <span className="sy_roomsel_sy2toptext basic_txt flex">카라반 2호</span><br />
+                                            <span className="flex gap-[5px] items-center"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" viewBox="0 0 26 27" fill="none">
                                                 <g id="Group">
                                                     <path id="Vector" d="M13.0001 22.3494C17.6458 22.3494 21.4119 18.5833 21.4119 13.9376C21.4119 9.29195 17.6458 5.52588 13.0001 5.52588C8.35445 5.52588 4.58838 9.29195 4.58838 13.9376C4.58838 18.5833 8.35445 22.3494 13.0001 22.3494Z" stroke="#3F422F" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"></path>
                                                     <path id="Vector_2" d="M13 8.37598V13.9379" stroke="#3F422F" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"></path>
                                                     <path id="Vector_3" d="M13 13.9375L16.5067 16.2576" stroke="#3F422F" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"></path>
                                                 </g>
                                             </svg> 입실 14시, 퇴실 12시</span><br />
-                                            <span><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <span className="flex gap-[5px] items-start"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="18" viewBox="0 0 18 18" fill="none">
                                                 <g id="message">
                                                     <path id="Vector" d="M15.4707 1.29053H2.5295C2.21748 1.29053 1.91824 1.41448 1.69761 1.63511C1.47698 1.85574 1.35303 2.15498 1.35303 2.467V12.467C1.35303 12.779 1.47698 13.0783 1.69761 13.2989C1.91824 13.5195 2.21748 13.6435 2.5295 13.6435H4.88244V16.5846L8.55303 13.6435H15.4707C15.7827 13.6435 16.0819 13.5195 16.3026 13.2989C16.5232 13.0783 16.6471 12.779 16.6471 12.467V2.467C16.6471 2.15498 16.5232 1.85574 16.3026 1.63511C16.0819 1.41448 15.7827 1.29053 15.4707 1.29053Z" stroke="#3F422F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
                                                 </g>
                                             </svg> 침구류,식기류, tv, 냉장고, 전자렌지, 밥솥, 세면도구 구비되어있음. <br />
                                                 *(단 세면도구, 타올은 챙겨오세요)</span> <br />
-                                            <span><svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" viewBox="0 0 26 27" fill="none">
+                                            <span className="flex gap-[5px] items-center"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" viewBox="0 0 26 27" fill="none">
                                                 <g id="login">
                                                     <path id="Vector" d="M9.84473 18.0923V22.8158" stroke="#3F422F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
                                                     <path id="Vector_2" d="M17.9539 13.4475C17.6747 13.3491 17.3754 13.29 17.0662 13.29H9.4657C8.03936 13.29 6.88232 14.4316 6.88232 15.8388V22.8946H19.6496V15.8388C19.6496 14.7465 18.9414 13.8116 17.9539 13.4475Z" stroke="#3F422F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
@@ -325,7 +325,7 @@ const View: React.FC = () => {
                                                     <path id="Vector_4" d="M16.2581 8.47809C16.2581 10.1117 14.9215 11.4303 13.2658 11.4303C11.62 11.4303 10.2734 10.1117 10.2734 8.47809C10.2734 6.84454 11.61 5.52588 13.2658 5.52588C14.9115 5.52588 16.2581 6.84454 16.2581 8.47809Z" stroke="#3F422F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
                                                 </g>
                                             </svg> 성인 2명, 미성년2인</span><br />
-                                            <span> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <span className="flex gap-[5px] items-center"> <svg xmlns="http://www.w3.org/2000/svg" width="26" height="18" viewBox="0 0 18 18" fill="none">
                                                 <g id="car">
                                                     <path id="Vector" d="M8.8833 12.9521V16.5572" stroke="#3F422F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
                                                     <path id="Vector_2" d="M11.2866 0.935547L1.07227 16.5574H16.6941L6.47983 0.935547" stroke="#3F422F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
@@ -346,20 +346,20 @@ const View: React.FC = () => {
                                         <img src="//item-team-sosul.vercel.app/img/image/image 19.png" className="sy-image" alt="" />
                                         <div className="sy_imgtext">
                                             <span className="sy_roomsel_sy2toptext basic_txt">카라반 3호</span><br />
-                                            <span><svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" viewBox="0 0 26 27" fill="none">
+                                            <span className="flex gap-[5px] items-center"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" viewBox="0 0 26 27" fill="none">
                                                 <g id="Group">
                                                     <path id="Vector" d="M13.0001 22.3494C17.6458 22.3494 21.4119 18.5833 21.4119 13.9376C21.4119 9.29195 17.6458 5.52588 13.0001 5.52588C8.35445 5.52588 4.58838 9.29195 4.58838 13.9376C4.58838 18.5833 8.35445 22.3494 13.0001 22.3494Z" stroke="#3F422F" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"></path>
                                                     <path id="Vector_2" d="M13 8.37598V13.9379" stroke="#3F422F" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"></path>
                                                     <path id="Vector_3" d="M13 13.9375L16.5067 16.2576" stroke="#3F422F" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"></path>
                                                 </g>
                                             </svg> 입실 14시, 퇴실 12시</span><br />
-                                            <span><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <span className="flex gap-[5px] items-start"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="18" viewBox="0 0 18 18" fill="none">
                                                 <g id="message">
                                                     <path id="Vector" d="M15.4707 1.29053H2.5295C2.21748 1.29053 1.91824 1.41448 1.69761 1.63511C1.47698 1.85574 1.35303 2.15498 1.35303 2.467V12.467C1.35303 12.779 1.47698 13.0783 1.69761 13.2989C1.91824 13.5195 2.21748 13.6435 2.5295 13.6435H4.88244V16.5846L8.55303 13.6435H15.4707C15.7827 13.6435 16.0819 13.5195 16.3026 13.2989C16.5232 13.0783 16.6471 12.779 16.6471 12.467V2.467C16.6471 2.15498 16.5232 1.85574 16.3026 1.63511C16.0819 1.41448 15.7827 1.29053 15.4707 1.29053Z" stroke="#3F422F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
                                                 </g>
                                             </svg> 침구류,식기류, tv, 냉장고, 전자렌지, 밥솥, 세면도구 구비되어있음. <br />
                                                 *(단 세면도구, 타올은 챙겨오세요)</span> <br />
-                                            <span><svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" viewBox="0 0 26 27" fill="none">
+                                            <span className="flex gap-[5px] items-center"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 27" fill="none">
                                                 <g id="login">
                                                     <path id="Vector" d="M9.84473 18.0923V22.8158" stroke="#3F422F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
                                                     <path id="Vector_2" d="M17.9539 13.4475C17.6747 13.3491 17.3754 13.29 17.0662 13.29H9.4657C8.03936 13.29 6.88232 14.4316 6.88232 15.8388V22.8946H19.6496V15.8388C19.6496 14.7465 18.9414 13.8116 17.9539 13.4475Z" stroke="#3F422F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
@@ -367,7 +367,7 @@ const View: React.FC = () => {
                                                     <path id="Vector_4" d="M16.2581 8.47809C16.2581 10.1117 14.9215 11.4303 13.2658 11.4303C11.62 11.4303 10.2734 10.1117 10.2734 8.47809C10.2734 6.84454 11.61 5.52588 13.2658 5.52588C14.9115 5.52588 16.2581 6.84454 16.2581 8.47809Z" stroke="#3F422F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
                                                 </g>
                                             </svg> 성인 2명, 미성년2인</span><br />
-                                            <span> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <span className="flex gap-[5px] items-center"> <svg xmlns="http://www.w3.org/2000/svg" width="26" height="18" viewBox="0 0 18 18" fill="none">
                                                 <g id="car">
                                                     <path id="Vector" d="M8.8833 12.9521V16.5572" stroke="#3F422F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
                                                     <path id="Vector_2" d="M11.2866 0.935547L1.07227 16.5574H16.6941L6.47983 0.935547" stroke="#3F422F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
@@ -981,13 +981,13 @@ const View: React.FC = () => {
                                         <div className="roombt_sy2">
                                             <div className="saleall_sy">
                                                 <span className="sale_sy">20%</span>
-                                                <span className="price_sy">64,000원 ~</span>
+                                                <span className="price_sy">64,000원~</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="rescheck_sy3">
                                         <span className="gn_sy2"> 입실 </span><span className="gn_sy3">2025.12.19</span>
-                                        <span className="gn_sy2">~    퇴실</span>
+                                        <span className="gn_sy2">~퇴실</span>
                                         <span className="gn_sy3">2025.12.21</span> <br />
                                     </div>
                                     <div className="rescheck_sy3">
