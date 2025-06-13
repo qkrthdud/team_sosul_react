@@ -765,7 +765,7 @@
 
 .product_page_box {
     justify-content: space-between;
-    gap: 60px
+    gap: 230px
 }
 
 @media(max-width: 991px) {

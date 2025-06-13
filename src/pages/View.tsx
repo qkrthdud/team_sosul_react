@@ -26,7 +26,7 @@ const View: React.FC = () => {
     const productId = '123';
 
     // 2. 예약하기 버튼 클릭 시 페이지 이동을 처리하는 함수
-    const handleReservationClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const handleReservationClick = (e: React.MouseEvent<HTMLElement>) => {
         // a 태그의 기본 링크 이동 동작을 막습니다.
         e.preventDefault();
         // 지정된 경로로 이동합니다.
@@ -968,6 +968,7 @@ const View: React.FC = () => {
                             </div>
                             {/* <!--// 상세 방문후기 --> */}
                         </div>
+
                         <div className="product_page_right">
                             <div className="sticky_box">
 
@@ -987,28 +988,22 @@ const View: React.FC = () => {
                                     </div>
                                     <div className="rescheck_sy3">
                                         <span className="gn_sy2"> 입실 </span><span className="gn_sy3">2025.12.19</span>
-                                        <span className="gn_sy2">~    퇴실</span>
+                                        <span className="gn_sy2">~퇴실</span>
                                         <span className="gn_sy3">2025.12.21</span> <br />
                                     </div>
-                                    <div className="rescheck_sy3">
-                                        <span className="gn_sy2">대인</span>
-                                        <span className="gn_sy3">3 명</span>
-                                        <span className="gn_sy2">소인</span>
-                                        <span className="gn_sy3">2 명</span>
-                                    </div>
+
                                     <div className="rescheck_sy4">
                                         <span>사이트 요금</span>
-                                        <span>1명 추가 + 64,000원</span>
                                     </div>
                                     <div className="rescheck_sy5">
                                         <span>총액</span>
-                                        <span>70,000원</span>
+                                        <span>0원</span>
                                     </div>
                                     <button
-                                    className="mt-4 w-full btn block w-full text-center bg-[#3F422F] text-white py-3 rounded-lg font-bold hover:bg-[#2c2e21] transition-colors"
-                                    onClick={() => navigate('/reservation/:id')}
+                                        className="mt-4 w-full btn block text-center bg-[#3F422F] text-white py-3 rounded-lg font-bold hover:bg-[#2c2e21] transition-colors"
+                                        onClick={() => navigate(`/reservation/${productId}`)}
                                     >
-                                    예약하기
+                                        예약하기
                                     </button>
                                 </div>
 
