@@ -27,29 +27,32 @@ const Reservation: React.FC = () => {
           </div>
 
           {/* 사이트 선택 */}
-          <section className="mb-8">
-            <h3 className="text-xl font-bold mb-4">사이트 선택</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="border-b border-gray-300 mb-6 borderbt_sy">
+            <h2 className="text-2xl font-bold mb-4">사이트 선택</h2>
+            <div className="grid grid-cols-4 gap-2 site_sy">
               {Array.from({ length: 8 }, (_, i) => (
                 <div
                   key={i}
-                  className="bg-gray-100 text-center py-3 rounded-md cursor-pointer hover:bg-gray-200 transition-colors"
+                  className=" text-center py-2 cursor-pointer hover:bg-gray-200 siteC_sy "
                 >
                   C{i + 1}
                 </div>
               ))}
             </div>
-          </section>
+          </div>
 
           <hr className="my-8" />
 
           {/* 인원/차량 선택 */}
-          <section className="mb-8">
-            <div className="flex justify-between items-center mb-4">
-              <div className="flex items-center gap-2">
-                <span className="font-semibold">대인</span>
-                <select className="border rounded-md px-2 py-1">
-                  {[0, 1, 2, 3, 4].map((n) => (<option key={n} value={n}>{n}</option>))}
+          <div className="border-b border-gray-300 pb-4 mb-6 space-y-4">
+            {/* 대/소인 */}
+            <div className="flex justify-between items-center">
+              <div className="flex items-center space-x-2 syre_container">
+                <span className="font-medium">대인</span>
+                <select className="border rounded px-2 py-1">
+                  {[0, 1, 2, 3, 4].map((n) => (
+                    <option key={n} value={n}>{n}</option>
+                  ))}
                 </select>
                 <span>명</span>
                 <span className="font-semibold ml-4">소인</span>
@@ -62,16 +65,18 @@ const Reservation: React.FC = () => {
             </div>
 
             <div className="flex justify-between items-center">
-              <div className="flex items-center gap-2">
-                <span className="font-semibold">차량</span>
-                <select className="border rounded-md px-2 py-1">
-                  {[0, 1, 2].map((n) => (<option key={n} value={n}>{n}</option>))}
+              <div className="flex items-center space-x-2 syre_container">
+                <span className="font-medium">차량</span>
+                <select className="border rounded px-2 py-1">
+                  {[0, 1, 2].map((n) => (
+                    <option key={n} value={n}>{n}</option>
+                  ))}
                 </select>
                 <span>대</span>
               </div>
               <div className="text-sm text-gray-600">기준차량: 최대 2대</div>
             </div>
-          </section>
+          </div>
 
           <hr className="my-8" />
 
