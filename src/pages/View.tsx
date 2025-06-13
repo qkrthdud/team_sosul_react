@@ -35,8 +35,8 @@ const View: React.FC = () => {
 
         console.log( '상태변수',campground, '링크수집',state); // 둘 다 null로 출력되고 있음
         console.log("location:", location);
-console.log("location.state:", location.state);
-console.log("state:", state);
+        console.log("location.state:", location.state);
+        console.log("state:", state);
 
         if (state?.fatchdata) {
           setCampground(state.fatchdata);
@@ -109,7 +109,9 @@ console.log("state:", state);
                             <div className="h_view_top_title">
                                 <div>
                                     <h3 className="sub_tit">{campground && campground.campground_name}</h3>
-                                    <p className="flex gap-[5px] text-gray_3"><img src="//item-team-sosul.vercel.app/img/icon/detail_place.svg" alt="위치" />경기도 여주시 능서면 중부대로 2545-74</p>
+                                    <p className="flex gap-[5px] text-gray_3">
+                                        <img src="//item-team-sosul.vercel.app/img/icon/detail_place.svg" alt="위치" />
+                                        { campground && campground.location }</p>
                                 </div>
                                 <div className="h_view_top_title_iconbox">
                                     <a href="tel:01012341234"><img src="//item-team-sosul.vercel.app/img/icon/detail_call.svg" alt="전화하기" /></a>
@@ -131,11 +133,9 @@ console.log("state:", state);
                                     <div className="h_vinfo_tit">
                                         <h4 className="list_tit">{campground && campground.campground_name}</h4>
 
-                                        <div>
-                                            <p className="basic_txt">아이들과 신나게 놀 수 있는 캠핑장!!!</p>
-                                            <p className="basic_txt">가족캠핑하기 좋은 곳이며 넓은 주차공간과 텐트마다 공간이 충분해서 대형텐트로 단체캠핑이 가능합니다.</p>
+                                        <div className="basic_txt">
+                                            {campground && campground.description}
                                         </div>
-                                        <p className="basic_txt">가족과 함께 즐겁고 행복한 캠핑이 될 수 있도록 노력하겠습니다.</p>
                                     </div>
                                 </div>
 
@@ -145,7 +145,7 @@ console.log("state:", state);
                                     </div>
 
                                     <div>
-                                        <h4 className="list_tit">소제목</h4>
+                                        <h4 className="list_tit">시설사진</h4>
 
                                         <section>
                                             <div className="h_vinfo_img">
@@ -322,7 +322,7 @@ console.log("state:", state);
                                             <div className="roombt_sy2">
                                                 <div className="saleall_sy">
                                                     <span className="sale_sy">20%</span>
-                                                    <span className="price_sy">64,000원~</span>
+                                                    <span className="price_sy">{campground && campground.price}원~</span>
                                                 </div>
                                                 <div className="salebt_sy">
                                                     <button className="salebt2_sy"> 선택하기 </button>
@@ -364,7 +364,7 @@ console.log("state:", state);
                                             <div className="roombt_sy2">
                                                 <div className="saleall_sy">
                                                     <span className="sale_sy">20%</span>
-                                                    <span className="price_sy">64,000원~</span>
+                                                    <span className="price_sy">{campground && campground.price}원~</span>
                                                 </div>
                                                 <div className="salebt_sy">
                                                     <button className="salebt2_sy"> 선택하기 </button>
@@ -406,7 +406,7 @@ console.log("state:", state);
                                             <div className="roombt_sy2">
                                                 <div className="saleall_sy">
                                                     <span className="sale_sy">20%</span>
-                                                    <span className="price_sy">64,000원~</span>
+                                                    <span className="price_sy">{campground && campground.price}원~</span>
                                                 </div>
                                                 <div className="salebt_sy">
                                                     <button className="salebt2_sy"> 선택하기 </button>
