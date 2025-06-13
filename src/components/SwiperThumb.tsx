@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 import Title from "../ui/Title";
 import { fetchData } from '../lib/api'; 
 import type { Database } from '../types/supabase.types'; 
+import Productitme from '../ui/Productitme';
 
 type Campground = Database['public']['Tables']['campgrounds']['Row'];
 
@@ -35,7 +36,7 @@ function CampgroundCard({ campground }: { campground: Campground }) {
     : null;
 
   return (
-    <Link to={`/product/view/${campground.id}`}>
+    <Link to={`/product/view/${campground.id}`} >
       <div className="con_box">
         <div className="con_img_box">
           <img
@@ -111,8 +112,8 @@ function SwiperThumb() {
         
         <Title dataobj={{ tit:"당신을 위한 추천 지금 여기", btnshow: true, txtalign : "center" }} />
         
-        <div className="slider">
-          <div className="inner">
+        <div className="slider product_list">
+          <div className="inner sub_con_box">
             <Swiper
               /* ... Swiper props ... */
               modules={[Navigation, Pagination]}
@@ -139,9 +140,10 @@ function SwiperThumb() {
                 ))
               ) : (
                 campgrounds.map((campground) => (
-                  <SwiperSlide key={campground.id}>
+                  <SwiperSlide key={campground.id} >
                     {/* 3. 각 카드에 대한 로직을 자식 컴포넌트로 분리하여 렌더링합니다. */}
-                    <CampgroundCard campground={campground} />
+                    
+                    <Productitme  fatchdata={campground}></Productitme>
                   </SwiperSlide>
                 ))
               )}

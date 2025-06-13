@@ -16,11 +16,11 @@ const Confirmation: React.FC = () => {
 
             <div className="flex flex-col gap-[30px]">
                 {/* 캠핑장 정보 */}
-                <div className="flex py-[20px]">
+                <div className="flex py-[20px] gap-[20px]">
                     <img
-                    src="/images/camping.jpg"
+                    src="img/image/confirmation_img.jpg"
                     alt="여주 블루마린캠핑장"
-                    className="w-40 h-28 object-cover rounded-md"
+                    className="object-cover rounded-md"
                     />
                     <div className="">
                         <h3 className="text-lg font-semibold">여주 블루마린캠핑장</h3>
@@ -85,8 +85,8 @@ const Confirmation: React.FC = () => {
 
             {/* 버튼 */}
             <div className="flex gap-4 justify-center">
-                <button className="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">영수증 조회하기</button>
-                <button className="px-4 py-2 bg-green-700 text-white rounded-lg hover:bg-green-800">예약취소하기</button>
+                <button className="px-[142px] py-2 border border-black rounded-lg hover:bg-main hover:text-white">영수증 조회하기</button>
+                <button className="px-[142px] py-2 border border-black rounded-lg hover:bg-main hover:text-white">예약취소하기</button>
             </div>
         </div>
   );

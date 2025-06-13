@@ -1266,9 +1266,10 @@
 
 .h_view_top_tab {
     position: sticky;
-    top: 80px;
+    top: 65px;
     background: #fff;
-    z-index: 1
+    z-index: 1;
+    padding: 20px 0;
 }
 
 .product_list {

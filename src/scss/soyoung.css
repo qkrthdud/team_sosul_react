@@ -285,7 +285,6 @@
 .checkinout_sy {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .re_container_sy {
@@ -296,8 +295,8 @@
   align-items: center;
   gap: 30px;
   align-self: stretch;
-  border-radius: 10px;
-  border: 1px solid #DDD;
+  /* border-radius: 10px;
+  border: 1px solid #DDD; */
 }
 
 .gn_sy {

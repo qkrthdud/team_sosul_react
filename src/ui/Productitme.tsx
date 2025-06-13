@@ -14,8 +14,8 @@ const Productitme: React.FC<ProductItemProps> = ({ fatchdata }) => {
         setLiked((prev: boolean) => !prev);
     };
     return (
-        <div className="con_box">
-            <Link to={`/product/view/${fatchdata.id}`} className="con_img_box">
+        <div className="con_box w-full">
+            <Link to={`/product/view/${fatchdata.id}`} state={{ fatchdata }} className="con_img_box">
                 <img
                     src={ fatchdata.main_photo_url || "//item-team-sosul.vercel.app/img/image/image1.jpg" }
                     alt={fatchdata.campground_name || "캠핑장 이름"}

@@ -102,7 +102,7 @@ const List: React.FC = () => {
                     </div>
                     <Quickicon activetab={name} ></Quickicon>
                     <Filter></Filter>
-                    <div className="sub_con_box flex flex-wrap ">
+                    <div className="sub_con_box flex flex-wrap grid grid-cols-4 gap-4">
                         {
                             loading ? (<p>로딩중...</p>) : campgrounds && campgrounds.map((item) => (
                                 <Productitme key={item.id} fatchdata={item}></Productitme>
