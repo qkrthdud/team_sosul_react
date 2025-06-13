@@ -26,13 +26,13 @@ const Reservation: React.FC = () => {
           </div>
 
           {/* 사이트 선택 */}
-          <div className="border-b border-gray-300 pb-4 mb-6">
+          <div className="border-b border-gray-300 mb-6 borderbt_sy">
             <h2 className="text-2xl font-bold mb-4">사이트 선택</h2>
-            <div className="grid grid-cols-4 gap-2">
+            <div className="grid grid-cols-4 gap-2 site_sy">
               {Array.from({ length: 8 }, (_, i) => (
                 <div
                   key={i}
-                  className="bg-gray-100 text-center py-2 rounded cursor-pointer hover:bg-gray-200"
+                  className=" text-center py-2 cursor-pointer hover:bg-gray-200 siteC_sy "
                 >
                   C{i + 1}
                 </div>
@@ -44,7 +44,7 @@ const Reservation: React.FC = () => {
           <div className="border-b border-gray-300 pb-4 mb-6 space-y-4">
             {/* 대/소인 */}
             <div className="flex justify-between items-center">
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 syre_container">
                 <span className="font-medium">대인</span>
                 <select className="border rounded px-2 py-1">
                   {[0, 1, 2, 3, 4].map((n) => (
@@ -68,7 +68,7 @@ const Reservation: React.FC = () => {
 
             {/* 차량 */}
             <div className="flex justify-between items-center">
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 syre_container">
                 <span className="font-medium">차량</span>
                 <select className="border rounded px-2 py-1">
                   {[0, 1, 2].map((n) => (
