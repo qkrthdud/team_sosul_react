@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useNavigate } from 'react-router-dom';
 
 // 컴포넌트 이름을 요청하신 대로 ReservationForm으로 유지합니다.
