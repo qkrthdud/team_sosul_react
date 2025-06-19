@@ -17,7 +17,7 @@ import Productitme from '../ui/Productitme';
 type Campground = Database['public']['Tables']['campgrounds']['Row'];
 
 // 각 슬라이드 아이템을 위한 별도의 컴포넌트를 만들면 상태 관리가 더 쉬워집니다.
-function CampgroundCard({ campground }: { campground: Campground }) {
+export function CampgroundCard({ campground }: { campground: Campground }) {
   // 1. '좋아요' 상태를 이 카드 컴포넌트 내부에서 관리합니다.
   const [liked, setLiked] = useState(false);
 
