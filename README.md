@@ -39,4 +39,4 @@
 - 미디어쿼리와 테일윈드 기반 반응형 구조 적용으로 다양한 해상도 대응 가능  
 
 ## 5. 팀 피그잼 주소  
-- https://www.figma.com/board/5wjaWBMli3WjusUBgXPcNQ/Sosul-react-Project?node-id=0-1&t=3TevyPGOIlFRVRrt-1
+- https://www.figma.com/design/LMxVhmWD2DN8Oe8dY98tHF/%EC%86%8C%EC%8A%AC-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8?node-id=4319-23193&m=dev
